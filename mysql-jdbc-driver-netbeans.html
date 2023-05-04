@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mysql Jdbc Driver Netbeans - QnA</title>
+    <meta name="description" content="Mysql Jdbc Driver Netbeans, , , , , , , 0, java - Classnotfound &quot;com.mysql.jdbc.Driver&quot; for JDBC Driver using, stackoverflow.com, 989 x 656, png, , 20, mysql-jdbc-driver-netbeans, QnA" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mysql Jdbc Driver Netbeans - QnA" />
+    <meta property="og:description" content="Mysql Jdbc Driver Netbeans, , , , , , , 0, java - Classnotfound &quot;com.mysql.jdbc.Driver&quot; for JDBC Driver using, stackoverflow.com, 989 x 656, png, , 20, mysql-jdbc-driver-netbeans, QnA" />
+    <meta property="og:site_name" content="QnA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mysql Jdbc Driver Netbeans - QnA" />
+    <meta name="twitter:description" content="Mysql Jdbc Driver Netbeans, , , , , , , 0, java - Classnotfound &quot;com.mysql.jdbc.Driver&quot; for JDBC Driver using, stackoverflow.com, 989 x 656, png, , 20, mysql-jdbc-driver-netbeans, QnA" />
+    <link rel='stylesheet' id='generate-style-css' href='https://sangpengajarku.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://sangpengajarku.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://sangpengajarku.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://sangpengajarku.github.io">Home</a></li>
+                        </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://sangpengajarku.github.io" rel="home"> QnA</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">Mysql Jdbc Driver Netbeans</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">anggikhrsmdwi6048</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=Mysql+Jdbc+Driver+Netbeans" alt="Mysql Jdbc Driver Netbeans">
+                    </div>
+                    <p></p>
+                    <p>bagaimana codingan buat game di netbeans</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-codingan-buat-game-di-netbeans">1.
+                                            bagaimana codingan buat game di netbeans</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#fungsi-jasperreport-dalam-netbeans-%e2%80%8b">2.
+                                            fungsi JasperReport dalam netbeans ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pada-saat-kita-mengakses-mysql-pada-command-prompt-kemudian-kita-masuk-sebagai-root-dengan-perintah-mysql-u-rootlalu-pada-cmd-saya-muncul-mariadb-bukan-mysql-apakah-ada-perbedaannya">3.
+                                            Pada saat kita mengakses mysql pada command prompt, kemudian kita masuk sebagai root dengan perintah "mysql -u root"
+Lalu pada cmd saya muncul "MariaDB", bukan "mysql".
+Apakah ada perbedaannya ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-perbedaan-mysql-dan-sql%e2%80%8b">4.
+                                            apa perbedaan mysql dan sql​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-pengertian-mysql-dan-penginstalannya">5.
+                                            apa pengertian mysql dan penginstalannya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-kah-kepanjangan-mysql">6.
+                                            Apa kah kepanjangan mysql</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimanakah-cara-menjalankan-program-yang-sudah-kita-buat-menggunakan-netbeans%e2%80%8b">7.
+                                            Bagaimanakah cara menjalankan program yang sudah kita buat menggunakan Netbeans​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#membuat-tabel-java-netbeans">8.
+                                            membuat tabel java netbeans</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#fungsi-dari-sytax-mysql">9.
+                                            Fungsi Dari Sytax Mysql</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-sebutkan-pengertian-fungsi-aritmatika-pada-javanetbeans2-sebutkan-cara-kerja-fungsi-aritmatika-pada-javanetbeans">10.
+                                            1. sebutkan pengertian fungsi aritmatika pada java/netbeans
+2. sebutkan cara kerja fungsi aritmatika pada java/netbeans</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#guna-menggunakan-mysql-server-secara-manual-harus-menggunakan-file-mysqkd-exe-yang-berada-di-dalam-folder-bin-instalasi-mysql-mysql-exe-akan-di-akses-menggunakan-aplikasi-command-prompt-cmd-oleh">11.
+                                            Guna menggunakan MySQL server secara manual, harus menggunakan file mysqkd.exe yang berada di dalam folder bin instalasi MySQL .MySQL exe akan di akses menggunakan aplikasi command prompt (cmd). Oleh karena itu, bagaimana folder instalasi MySQL harus di ubah menjadi D:\MySQL 5.6? </a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-fungsi-routine-pada-mysql">12.
+                                            Apa fungsi routine pada mysql</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#fungsi-dari-phpmyadmin-dan-mysql">13.
+                                            Fungsi dari PHPMyadmin dan MySQL</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-membuat-koneksi-netbeans-yang-benar">14.
+                                            cara membuat koneksi netbeans yang benar</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pencipta-mysql-adalah">15.
+                                            pencipta mysql adalah </a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#konsep-database-dalam-mysql">16.
+                                            konsep database dalam mysql ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apakah-ada-yang-punya-codingan-whiledo-dan-if-pada-netbeans">17.
+                                            apakah ada yang punya codingan while,do dan if pada netbeans?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#penamaan-variabel-yang-benar-dalam-netbeans">18.
+                                            Penamaan variabel yang benar  dalam netbeans</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-pengertian-php-mysql">19.
+                                            Apa pengertian php mysql?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#netbeans-perkembangbiakan-vivipar-dan-ovovivipar">20.
+                                            NetBeans perkembangbiakan Vivipar dan ovovivipar</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#port-dari-mysql-adalah">21.
+                                            port dari Mysql adalah...</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-apa-itu-mysql">22.
+                                            jelaskan apa itu mysql</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#mysql-adalahnetbean-adalahphp-adalah%e2%80%8b">23.
+                                            Mysql adalahNetbean adalahPhp adalah​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-masuk-ke-mysql">24.
+                                            Bagaimana cara masuk ke mysql ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#7-3jelaskan-fungsi-dari-fitur-library-pada-aplikasi-javanetbeans-jelaskan-fungsi-dari-my-sql-driver-pada-aplikasi-javanetbeans-sebuthean-minimal3-jenis-jenis-gul-yg-digunakanmembuat-program-interfa">25.
+                                            7.3"Jelaskan Fungsi dari Fitur library pada aplikasi JavaNetbeans ?Jelaskan fungsi dari my SQL driver pada aplikasi JavaNetbeans ?Sebuthean minimal3 Jenis-Jenis Gul yg digunakanmembuat program interface menggunakan java?J Panel J scrollpanel, dan / Toolbar merupakan kelompoledari ?Jelaskan fungsi dari komponen yg ferdapat pada soalnomor 4?Jawab.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-codingan-membuat-game-lewat-netbeans">26.
+                                            Bagaimana codingan membuat game lewat netbeans</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#keunggulan-dari-program-java-netbeans">27.
+                                            keunggulan dari program java netbeans</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pengertian-dan-fungsi-dari-fitur-netbeans-pada-toolbar-palette">28.
+                                            pengertian dan fungsi dari fitur netbeans pada toolbar palette</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#aritmatika-netbeans-bantu-coding">29.
+                                            Aritmatika netbeans bantu coding</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#perintah-perintah-mysql">30.
+                                            perintah perintah mysql </a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="bagaimana-codingan-buat-game-di-netbeans">
+                            1. bagaimana codingan buat game di netbeans</h2><br />
+                        Cara membuat game dengan menggunakan Netbeans, sebaiknya menggunakan Netbeans 7.4. pastikan Netbeans telah terdapat Java ME dan memiliki Emulator Platform:<br />1. Buka editor Netbeansnya.<br /><br />2. Pilih File –&gt; New Project, kemudian pilih Java ME –&gt; Mobile Application, pilih Next lalu buat Nama Projectnya “LatihanGame”, lalu Next kemudian pada Device Profile pilih MIDP-2.0, lalu Next –&gt; Finish<br /><br />3. Buka Pojectnya, klik kanan pada Source Packages, lalu pilih New –&gt; Java Package, lalu buat dengan nama Gambar, hal ini untuk membuat folder yang akan menampung gambar-gambar yang akan digunakan.<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="fungsi-jasperreport-dalam-netbeans-%e2%80%8b">
+                            2. fungsi JasperReport dalam netbeans ​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Open source alat untuk membuat laporan pada java yang dapat menulis dalam beberapa variasi target seperti printer dalam bentuk pdf , HTML, Microsoft Excel , dll</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="pada-saat-kita-mengakses-mysql-pada-command-prompt-kemudian-kita-masuk-sebagai-root-dengan-perintah-mysql-u-rootlalu-pada-cmd-saya-muncul-mariadb-bukan-mysql-apakah-ada-perbedaannya">
+                            3. Pada saat kita mengakses mysql pada command prompt, kemudian kita masuk sebagai root dengan perintah "mysql -u root"
+Lalu pada cmd saya muncul "MariaDB", bukan "mysql".
+Apakah ada perbedaannya ?</h2><br />
+                        Oh,sql yang terinstall di laptop/pc agan itu MariaDB,bukan mysql/sqlyog.<br /><br />coba agan masuk dulu ke bin mysql di CMD nya,pake perintah cd . .<br />cd xampp \ mysql \ bin<br /><br />terus coba mysql -u root -p<br />
+                                            <h2 class="ez-toc-section" id="apa-perbedaan-mysql-dan-sql%e2%80%8b">
+                            4. apa perbedaan mysql dan sql​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>musyaqol hrup nya sikol pmbcaan nya</p><p><strong>Jawaban:</strong></p><p>SQL adalah struktur bahasa untuk mengakses database, sedangkan MySQL adalah salah satu aplikasi database atau software untuk memanajemen database.</p><br />
+                                            <h2 class="ez-toc-section" id="apa-pengertian-mysql-dan-penginstalannya">
+                            5. apa pengertian mysql dan penginstalannya</h2><br />
+                        Mysql kalo dalam game adalah suatu server yangnmenghubungkan dengan suatu server bot . Penginstalannya harus ada alat bantu yaitu java script <br />
+                                            <h2 class="ez-toc-section" id="apa-kah-kepanjangan-mysql">
+                            6. Apa kah kepanjangan mysql</h2><br />
+                        mysql adalah singkatan "My Structured Query Language". Program ini berjalan sebagai server menyediakan multi-user mengakses ke sejumlah database.<br /> <br />My Structure Query Language<br /><br /><br /><br /><br /><br /><br />
+                                            <h2 class="ez-toc-section" id="bagaimanakah-cara-menjalankan-program-yang-sudah-kita-buat-menggunakan-netbeans%e2%80%8b">
+                            7. Bagaimanakah cara menjalankan program yang sudah kita buat menggunakan Netbeans​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Untuk menulis kode program Java, tersedia 2 pilihan: menggunakan text editor atau memakai IDE (Integrated Development Environment).</p><p></p><p>Sesuai dengan namanya, text editor adalah aplikasi yang dirancang secara khusus untuk menulis teks. Aplikasi jenis ini biasanya ringan dan memiliki fitur standar seperti penomoran baris (line numbering) dan pewarnaan kode program (syntax highlighting).</p><p></p><p>Mayoritas text editor bisa dipakai untuk menulis berbagai bahasa pemrograman, tidak hanya untuk 1 bahasa pemrograman saja.</p><p></p><p>Pilihan text editor ini cukup beragam, di antara yang cukup populer adalah Notepad++, Sublime Text, Atom, dan VS Code. Aplikasi Notepad bawaan Windows sebenarnya juga termasuk text editor, namun kurang pas dipakai untuk membuat program karena terlalu sederhana, misalnya tidak memiliki penomoran baris.</p><p></p><p>Selain text editor, pilihan lain untuk membuat kode program Java adalah menggunakan IDE (Integrated Development Environment). IDE ini bisa disebut sebagai “text editor kelas berat” karena fiturnya sangat banyak. Sebab itu pula ukuran file IDE jauh lebih besar daripada text editor biasa.</p><p></p><p>Mayoritas IDE juga secara khusus dirancang untuk bahasa pemrograman tertentu, meskipun juga ada yang menyediakan fitur untuk bahasa pemrograman lain.</p><p></p><p>Pilihan IDE populer untuk bahasa Java adalah Eclipse, NetBeans dan IntelliJ IDEA. Salah satu fitur dari IDE adalah kita bisa menulis, menjalankan dan melihat error kode program Java di satu tempat saja.</p><br />
+                                            <h2 class="ez-toc-section" id="membuat-tabel-java-netbeans">
+                            8. membuat tabel java netbeans</h2><br />
+                        Membuat JTable dengan GUI<br />Untuk membuat JTable melalui GUI, kita dapat menambahkan komponen JTable pada workspace Netbeans. Buat interface <br />interface Pada kolom tabel, definisikan 4 kolom yang datanya ingin ditampilkan yaitu dengan cara klik kanan JTable - Pilih Table Contents,kolom tabel Sedangkan untuk barisnya, pilih 0 karena defaultnya belum ada data yang ditampilkan <br />baris tabel<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="fungsi-dari-sytax-mysql">
+                            9. Fungsi Dari Sytax Mysql</h2><br />
+                        digunakan untuk operasi aritmatika dan logika <br />
+                                            <h2 class="ez-toc-section" id="1-sebutkan-pengertian-fungsi-aritmatika-pada-javanetbeans2-sebutkan-cara-kerja-fungsi-aritmatika-pada-javanetbeans">
+                            10. 1. sebutkan pengertian fungsi aritmatika pada java/netbeans
+2. sebutkan cara kerja fungsi aritmatika pada java/netbeans</h2><br />
+                        <p>1.Operator berfungsi untuk mengoperasikan (memanipulasi, mengolah) satu atau lebih variabel. Variabel yang dioperasikan disebut operand. Operator adalah simbol yang digunakan dalam program untuk merubah suatu nilai. Dalam program, operator digunakan untuk :</p>mengalikan nilai dua variabel, menginisialisasi  nilai pada variabel, membandingkan nilai dalam dua variable,dan sebagainya.<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="guna-menggunakan-mysql-server-secara-manual-harus-menggunakan-file-mysqkd-exe-yang-berada-di-dalam-folder-bin-instalasi-mysql-mysql-exe-akan-di-akses-menggunakan-aplikasi-command-prompt-cmd-oleh">
+                            11. Guna menggunakan MySQL server secara manual, harus menggunakan file mysqkd.exe yang berada di dalam folder bin instalasi MySQL .MySQL exe akan di akses menggunakan aplikasi command prompt (cmd). Oleh karena itu, bagaimana folder instalasi MySQL harus di ubah menjadi D:\MySQL 5.6? </h2><br />
+                        <p><strong>Jawaban:</strong></p><p>saat proses instalasi, pada step pilih lokasi instal, pilih di local disk D:</p><p><strong>Penjelasan:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="apa-fungsi-routine-pada-mysql">
+                            12. Apa fungsi routine pada mysql</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Stored procedure adalah salah satu objek routine yang tersimpan pada database MySQL dan dapat digunakan untuk menggantikan berbagai kumpulan perintah yang sering kita gunakan, seperti misalkan sejumlah row ke table lain dengan filter tertentu.</p><br />
+                                            <h2 class="ez-toc-section" id="fungsi-dari-phpmyadmin-dan-mysql">
+                            13. Fungsi dari PHPMyadmin dan MySQL</h2><br />
+                        Untuk membuat dan mengelola database MySQL :)Fungsi PHPMy-Admin : sebagai pengendali database MySQL sehingga pengguna MySQL tidak perlu repot menggunakan perintah-perintah SQL.<br /><br />MySQL berfungsi sebagai database server<br />MySQL berfungsi sebagai SQL (Structured Query Language) yang dimiliki sendiri dan sudah diperluas oleh Mysql<br /><br />
+                                            <h2 class="ez-toc-section" id="cara-membuat-koneksi-netbeans-yang-benar">
+                            14. cara membuat koneksi netbeans yang benar</h2><br />
+                        <p>1. Import paket jdbc / java connection untuk keperluan koneksi dari java netbeans ke database mysql.<br /><br />2. Buat kelas Koneksi.java yang isinya :<br /><br />import java.sql.Connection;<br />import java.sql.DriverManager;<br />import java.sql.SQLException;<br />public class Koneksi {<br />    private static Connection koneksi;<br />    public static Connection getKoneksi(){<br />        if(koneksi==null){<br />            try {<br />                String url="jdbc:mysql://localhost:3306/namadatabase";<br />                String user="namauser";<br />                String password="password";<br />                DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br />                koneksi=DriverManager.getConnection(url,user,password);<br />            } catch (SQLException t) {<br />                System.out.println("Error Membuat Koneksi");<br />            }<br />        }<br />        return koneksi;<br />    }<br />}<br /><br />Jangan lupa xamppnya diaktifkan. Kalo ngetik biar ga salah bisa pake panduan pencet tombol ctrl+space  . Kalo ada yang mau ditanyakan silahkan tanya. Yang diatas itu kelas koneksinya. Kalo mau login tinggal panggil koneksi atau buat aja terus nyamain user dan pw.</p><br />
+                                            <h2 class="ez-toc-section" id="pencipta-mysql-adalah">
+                            15. pencipta mysql adalah </h2><br />
+                        David Axmark dan Michael "Monty" Widenius, Pendiri MySQL AB, dalam sebuah konferensi.<br />   maaf klo salah<br />MySql diciptakan oleh perusahaan bernama MySQL AB. dan MySql AB ditemukan oleh  Michael "Monty" Widenius.<br /><br />
+                                            <h2 class="ez-toc-section" id="konsep-database-dalam-mysql">
+                            16. konsep database dalam mysql ?</h2><br />
+                        kumpulan dari data-data yang membentuk suatu berkas (file) yang saling berhubungan (relation) dengan tatcara yang tertentu untuk membentuk data baru atau informasi.<br />maaf jika salah itu setau saya<br />
+                                            <h2 class="ez-toc-section" id="apakah-ada-yang-punya-codingan-whiledo-dan-if-pada-netbeans">
+                            17. apakah ada yang punya codingan while,do dan if pada netbeans?</h2><br />
+                        penjelasan mengenai penggunaan tiap-tiap percabangan :*.if: Percabangan if ini digunakan jika kita hanya memilikisatu pernyaatanyang akan dijalankan dengan syarat tertentu. Sintaks if seperti berikut :if(kondisi){pernyataan} Jika kondisi benar, maka pernyataan akan dijalankan.Contoh : public class coba{public static void main (String [] args){int a=0;        if (a==0)System.out.println("Nilai a = 0");if (a==1)System.out.println("Nilai a = 1");}}Output : Program akan menampilkan  nilai a = 0 saja, karena pada if yang kedua, kondisi tidak memenuhi atau salah. *.if else: Percabangan if else digunakan saat kita memilikidua pernyataan dengan syarat tertentu. Sintaks if-else seperti berikut :if(kondisi){pernyataan1}else{pernyataan2}Jika hasil dari if benar, maka pernyataan1 yang dijalankan, sedangkan jika salah, pernyataan dua yang akan dijalankan.Contoh : public class coba{public static void main (String [] args){int a=0;        if (a==0)System.out.println("Nilai a = 0");elseSystem.out.println("Nilai a = 1");}}Output : program akan menampilkannilai a = 0, karena kondisi if bernilai benar, jika pada inisialisasi nilai a tidak bernilai 0, maka program akan menampilkannilai a = 1.*.else -if: percabangan yang digunakan saat kita memiliki banyak kondisi (lebih dari 2) dan banyak pernyataan (lebih dari 2). Sintaks dari else-if seperti berikut:if(kondisi){pernyataan1}elseif(kondisi2){pernyataan2}else(kondisi3){pernyataan3} else {penyataan4} jika kondisi1 benar, maka pernyataan1 akan dijalankan, jika kondisi2 benar, maka penyataan2 akan dijalankan, jika semua kondisisalah, maka penyataan4 yang akandijalankan saja.Contoh :public class coba{public static void main (String [] args){int a=2;        if (a==0)System.out.println("Nilai a = 0");else if(a==1)System.out.println("Nilai a = 1");else if(a==2)System.out.println("Nilai a = 2"); }}Output : Program akan menampilkan  nilai a = 2saja, karena pada  else-if yang ketiga atau dengan pernyataana==2bernilai benar, sedangkan pernyataan yang lain tidak dijalankan karena kondisi tidak memenuhi.*.switch-case : percabangan yang digunakan saat kita memiliki banyak kondisi (lebih dari 2) dan banyak pernyataan (ledbih dari 2).Sebenarnya switch-case ini hampir sama dengan else if, hanya saja sintaksnya yang berbeda. Sintaks dari switch-caseseperti berikut :switch (variabel) { case nilai1: pernyataan1; break; case nilai2: pernyataan2; break; default: pernyataan3; }Jika nilai variabel yang ditunjuk bernilai sesuai nilai1, maka pernyataan1 akan dijalankan, jika nilai variabel yang ditunjuk bernilai sesuai nilai2, pernyataan2 dijalankan, jika tidak ,maka pernyataan3 yang akan dijalankan.public class coba{public static void main (String [] args){int a=3;        switch (a) { case 1: System.out.println("Nilai a=1");break;case 2: System.out.println("Nilai a=2"); break;case 3: System.out.println("Nilai a=3");break;default: System.out.println("Nilai a=4"); break}}}Output : Program akan menampilkan  nilai a = 2 saja, karena kondisi bernilai benar, perhatika break dibelakang pernyataan, jika break ini dihapus, maka semua pernyataan akan dijalankan. Break digunakan untuk keluar dari switch-case saat 1 pernyataan sudah dijalankan.<br /><br /><br />Maaf copy... Soalnya ribet<br />
+                                            <h2 class="ez-toc-section" id="penamaan-variabel-yang-benar-dalam-netbeans">
+                            18. Penamaan variabel yang benar  dalam netbeans</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>mungkin yang dimaksud adalah dalam Java yah</p><p>dalam netbeans gak ada namanya nulis variabel</p><p></p><p>penulisannya:</p><p>1. memberikan tipe data</p><p>2. menuliskan nama variabel nya</p><p>3. variabel tidak boleh diawali dengan angka ataupun simbol</p><p>4. variabel tidak boleh mengandung simbol kecuali underscore "_"</p><p>5. variabel tidak boleh menggunakan spasi</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="apa-pengertian-php-mysql">
+                            19. Apa pengertian php mysql?</h2><br />
+                        php adalah bahasa program yg didesain utk menciptakan halaman web interaktif maupun aplikasi berbasis web pd komputer.<br />mysql adalah sebuah perangkat lunak sistem menajemen basis data sql - <strong>PHP</strong> adalah bahasa pemrograman script yang untuk memrogram situs web dinamis, walaupun tidak tertutup kemungkinan digunakan untuk pemakaian lain.<br />- <strong>MySQL</strong> adalah sebuah perangkat lunak sistem manajemen basis data SQL 
+(B. Inggris: Database Management System) atau DBMS yang multithread,
+ multi-user.<br /><br />Semoga Membantu!<br /><br />
+                                            <h2 class="ez-toc-section" id="netbeans-perkembangbiakan-vivipar-dan-ovovivipar">
+                            20. NetBeans perkembangbiakan Vivipar dan ovovivipar</h2><br />
+                        Vivipar bertelur kalau ovovivipar bertelur-melahirkan<br />
+                                            <h2 class="ez-toc-section" id="port-dari-mysql-adalah">
+                            21. port dari Mysql adalah...</h2><br />
+                        Default dari port Mysql tuh <strong>3306</strong>port 3306 /...semoga membantu<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-apa-itu-mysql">
+                            22. jelaskan apa itu mysql</h2><br />
+                        sebuah perangkat lunak sistem manajemen basis data SQL atau DBMS yang multithread, multi-user, dengan sekitar 6 juta instalasi diseluruh dunia.mysql itu sebuah perangkat lunak sistem management yang berbasis sql.<br />
+                                            <h2 class="ez-toc-section" id="mysql-adalahnetbean-adalahphp-adalah%e2%80%8b">
+                            23. Mysql adalahNetbean adalahPhp adalah​</h2><br />
+                        <p><strong>Penjelasan:</strong></p><p>MySQL adalah sebuah database management system (manajemen basis data) menggunakan perintah dasar SQL (Structured Query Language) yang cukup terkenal. </p><p></p><p>NetBeans adalah suatu serambi pengembangan perangkat lunak yang ditulis dalam bahasa pemrograman Java. </p><p></p><p>PHP adalah bahasa pemrograman yang sering disisipkan ke dalam HTML.</p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-masuk-ke-mysql">
+                            24. Bagaimana cara masuk ke mysql ?</h2><br />
+                        <p><strong>Jawaban:</strong></p><p></p><p>Untuk masuk ke MySQL, Anda dapat menggunakan perintah command line pada sistem operasi Anda. Langkah-langkahnya sebagai berikut:</p><p></p><p>1. Buka Command Prompt atau Terminal pada sistem operasi Anda.</p><p></p><p>2. Ketikkan cd/</p><p></p><p>3. cd xampp/</p><p></p><p>4. cd bin/</p><p></p><p>5. mysql -u root -p</p><p></p><p>Perlu diingat bahwa Anda harus memiliki hak akses yang cukup untuk masuk ke MySQL, jika tidak maka anda tidak akan dapat masuk.</p><p>Anda juga bisa menggunakan aplikasi seperti PHPMyAdmin atau MySQL Workbench untuk mengelola database MySQL secara grafis.</p><p></p><p>Itu dia cara masuk ke mysql, semoga bermanfaat.</p><p></p><p><strong>Penjelasan:</strong></p><p>maaf kalau salah</p><p><strong>Jawaban:</strong></p><p>Buka command prompt dengan cara tekan ctrl + R keudian ketik cmd lalu enter</p><p>cd</p><p>Buka MySQL dengan cara mengetikan cd AppServ\MySQL\bin\MySQL</p><p>Bila meminta password, masukkan password yang kalian buat (tapi biasanya password defaultnya “root”)</p><p><strong>Penjelasan:</strong></p><p><strong>ok</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="7-3jelaskan-fungsi-dari-fitur-library-pada-aplikasi-javanetbeans-jelaskan-fungsi-dari-my-sql-driver-pada-aplikasi-javanetbeans-sebuthean-minimal3-jenis-jenis-gul-yg-digunakanmembuat-program-interfa">
+                            25. 7.3"Jelaskan Fungsi dari Fitur library pada aplikasi JavaNetbeans ?Jelaskan fungsi dari my SQL driver pada aplikasi JavaNetbeans ?Sebuthean minimal3 Jenis-Jenis Gul yg digunakanmembuat program interface menggunakan java?J Panel J scrollpanel, dan / Toolbar merupakan kelompoledari ?Jelaskan fungsi dari komponen yg ferdapat pada soalnomor 4?Jawab.​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Untuk Mengatasi PUYENG !!!!</p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-codingan-membuat-game-lewat-netbeans">
+                            26. Bagaimana codingan membuat game lewat netbeans</h2><br />
+                        ini terjadi jika ingin memprogram menggunakan bahasa java di net beans<br />pertama , pastikan java sudak terpasang di komputer <br />kedua , mulai coding dengan opening java , lalu masukan variabel yang akan dijadikan fungsi if ,lalu jangan lupa untuk melakukan test programagar berhasil , tolong dijadikan brainliest answer ya thx <br />
+                                            <h2 class="ez-toc-section" id="keunggulan-dari-program-java-netbeans">
+                            27. keunggulan dari program java netbeans</h2><br />
+                        1. NetBeans GUI Builder GRATIS tis tis tis dengan ribuan plug In yang bisa kita <br />      download langsung di website resminya, maupun dari pihak ketiga<br />   2. NetBeans GUI Builder sangat kompetebel dengan Swing karena memang langsung <br />      dikembangkan oleh Sun yang notabenenya sebagai pengembang Swing.<br />   3. Netbeans tidak hanya dapat digunakan buat java saja, karena Netbeans dapat di <br />      gunakan untuk bahasa pemograman lain seperti C/C++, Ruby, dan PHP.<br />   4. NetBeans GUI Builder sangat cocok untuk digunakan dalam pengembangan sistem  <br />      berskala Enterprise.<br />   5. Pada paket tertentu, Netbeans juga menyertakan GlassFish V2 UR2 dan Apache <br />      Tomcat 6.0.16<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="pengertian-dan-fungsi-dari-fitur-netbeans-pada-toolbar-palette">
+                            28. pengertian dan fungsi dari fitur netbeans pada toolbar palette</h2><br />
+                        fungsi : <br />fitur swing controls -label(sebauh kolom/area yg digunakan untuk menampilkan tulisan atau gambar<br />)<br />
+                                            <h2 class="ez-toc-section" id="aritmatika-netbeans-bantu-coding">
+                            29. Aritmatika netbeans bantu coding</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>........................................</p><br />
+                                            <h2 class="ez-toc-section" id="perintah-perintah-mysql">
+                            30. perintah perintah mysql </h2><br />
+                        Perintah Mysql :<br />Menampilkan semua database : mysql&gt; show database;<br />membuat database baru : mysql&gt; create database mahasiswa; (itu contoh)<br />Memilih database yang akan digunakan : mysql&gt; use mahasiswa;<br />membuat tabel : mysql&gt; create table mahasiswa<br />- &gt; (nopeg int unsigned auto_increment primary key,<br />- &gt; nama varchar(5) not null,<br />- &gt; gender varchar(2),<br />- &gt; alamat varchar(20),<br />- &gt; kota varchar(15),<br />- &gt; tanggal lahir date null default '0000-00-00');<br />untuk melihat tabel : mysql&gt; show tables;<br />menampilkan struktur tabel : mysql show columns from mahasiswa;<br />Mengisi data : mysql&gt; insert into mahasiswa<br />&gt; (nma , gender , alamat , kota , tanggal lahir , kodepos),<br />&gt; values<br />&gt; ('Ahmad','LK','Pasar minggu no 2','jakarta','1999-09-24','4152')<br />&gt; ;<br />mengisi data (cara 2) : mysql&gt; insert into mahasiswa<br />&gt; set nama - 'budi',<br />&gt;gender - 'LK',<br />&gt;alamat - 'sukabumi no 1',<br />&gt; kota - 'sukabumi';<br />&gt;tanggal lahir - '1999-09-24',<br />Mengisi data (Cara ketiga) : mysql&gt; insert into mahasiswa<br />&gt; values<br />&gt;(null,'andl',LK','blok A','Sukabumi','1999-09-24','4152',)<br />&gt;;<br />menampilkan data : mysql&gt; select * from mahasiswa<br />&gt;;<br />Menambahkan kolom : mysql-&gt; alter table mahasiswa<br />-&gt; add kode pos varchar(5)<br />-&gt;;<br />Menghapus database : mysql-&gt;drop database mahasiswa;<br />menghapus kolom : (contoh menghapus kolom alamat)<br />mysql&gt;alter mahasiswa drop alamat;<br />Mengubah kolom : mysql-&gt; alter table mahasiswa chage kodepos telepon int(10);<br /><br />menampilkan kolom pilihan , cth : menampilkan kolom nama dan alamat : mysql-&gt;select nama , alamat from mahasiswa;<br />untuk menampilkan field sesuai abjad : mysql&gt;select * from mahasiswa order by nama;<br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/xtkx8lRUdlM?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>ti</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/amatilah-teks-lagu-injit-injit-semut.html">Amatilah Teks Lagu Injit Injit Semut</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/sop-suntik-kb.html">Sop Suntik Kb</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/download-aplikasi-stok-gudang-gratis-full-version.html">Download Aplikasi Stok Gudang Gratis Full Version</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/cara-memberikan-warna-pada-tabel.html">Cara Memberikan Warna Pada Tabel</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/drama-korea-trans-tv-dini-hari.html">Drama Korea Trans Tv Dini Hari</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/tuliskan-rumus-gaya-lorentz.html">Tuliskan Rumus Gaya Lorentz</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/penilaian-lari-12-menit.html">Penilaian Lari 12 Menit</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/cara-bagi-pulsa-m3-ke-m3.html">Cara Bagi Pulsa M3 Ke M3</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/tempat-pensil-kerajinan.html">Tempat Pensil Kerajinan</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/berapa-koin-snack-video-ke-rupiah.html">Berapa Koin Snack Video Ke Rupiah</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/gaya-deformatif.html">Gaya Deformatif</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/jenis-lemparan-bola-basket.html">Jenis Lemparan Bola Basket</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/jelaskan-manfaat-olahraga-renang.html">Jelaskan Manfaat Olahraga Renang</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/100ml-berapa-cm.html">100ml Berapa Cm</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/flek-tanda-awal-kehamilan.html">Flek Tanda Awal Kehamilan</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/10-liter-berapa-kg-beras.html">10 Liter Berapa Kg Beras</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/harga-kompresor-silent.html">Harga Kompresor Silent</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/berapa-tinggi-net-bola-voli-untuk-putra-dan-putri.html">Berapa Tinggi Net Bola Voli Untuk Putra Dan Putri</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/gambar-anime-menikah.html">Gambar Anime Menikah</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/sea-games-diselenggarakan-setiap.html">Sea Games Diselenggarakan Setiap</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://sangpengajarku.github.io"
+                            itemprop="url">QnA</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://sangpengajarku.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+    <script type='text/javascript' src='//jd3j7g5z1fqs.com/96/78/7a/96787a1945876b1a9c10f79941441964.js'></script>
+<script type='text/javascript' src='//jd3j7g5z1fqs.com/b4/f1/ef/b4f1ef8dfe59b7fa68754094cf6c8e0e.js'></script>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4739059,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4739059&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>

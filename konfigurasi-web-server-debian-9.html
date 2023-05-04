@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Konfigurasi Web Server Debian 9 - QnA</title>
+    <meta name="description" content="Konfigurasi Web Server Debian 9, Tutorial Install &amp;amp; Konfigurasi Web Server di Debian 9, , , , Tutorial TV, 2017-09-30T05:33:05.000000Z, 20, KONFIGURASI WEB SERVER DI DEBIAN 9 (VirtualBox) – BENISNOUS, benisnous.com, 1280 x 720, jpeg, , 20, konfigurasi-web-server-debian-9, QnA" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Konfigurasi Web Server Debian 9 - QnA" />
+    <meta property="og:description" content="Konfigurasi Web Server Debian 9, Tutorial Install &amp;amp; Konfigurasi Web Server di Debian 9, , , , Tutorial TV, 2017-09-30T05:33:05.000000Z, 20, KONFIGURASI WEB SERVER DI DEBIAN 9 (VirtualBox) – BENISNOUS, benisnous.com, 1280 x 720, jpeg, , 20, konfigurasi-web-server-debian-9, QnA" />
+    <meta property="og:site_name" content="QnA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Konfigurasi Web Server Debian 9 - QnA" />
+    <meta name="twitter:description" content="Konfigurasi Web Server Debian 9, Tutorial Install &amp;amp; Konfigurasi Web Server di Debian 9, , , , Tutorial TV, 2017-09-30T05:33:05.000000Z, 20, KONFIGURASI WEB SERVER DI DEBIAN 9 (VirtualBox) – BENISNOUS, benisnous.com, 1280 x 720, jpeg, , 20, konfigurasi-web-server-debian-9, QnA" />
+    <link rel='stylesheet' id='generate-style-css' href='https://sangpengajarku.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://sangpengajarku.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://sangpengajarku.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://sangpengajarku.github.io">Home</a></li>
+                        </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://sangpengajarku.github.io" rel="home"> QnA</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">Konfigurasi Web Server Debian 9</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">senda6</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=Konfigurasi+Web+Server+Debian+9" alt="Konfigurasi Web Server Debian 9">
+                    </div>
+                    <p></p>
+                    <p>cara mengkonfigurasikan web server debian yang kesalahan pada test web server</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-mengkonfigurasikan-web-server-debian-yang-kesalahan-pada-test-web-server">1.
+                                            cara mengkonfigurasikan web server debian yang kesalahan pada test web server</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#konfigurasi-web-server-berdasarkan-prinsip-kerja-nya-di-ubuntu-server-dan-debian-server">2.
+                                            konfigurasi web server berdasarkan prinsip kerja nya di ubuntu server dan Debian server?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#instalasi-dan-konfigurasi-web-server-apache-menggunakan-debian-ios">3.
+                                            Instalasi dan konfigurasi web server Apache menggunakan Debian IOS</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-mengkonfigurasi-web-server">4.
+                                            bagaimana cara mengkonfigurasi web server</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#perbedaan-konfigurasi-debian-9-dan-debian-8-itu-apa">5.
+                                            Perbedaan konfigurasi debian 9 dan debian 8 itu apa ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#file-konfigurasi-default-dari-sebuah-web-server-terletak-pada-file%e2%80%8b">6.
+                                            file konfigurasi default dari sebuah web server terletak pada file​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-membuat-login-proxy-pada-konfigurasi-debian-7-server">7.
+                                            bagaimana cara membuat login proxy pada konfigurasi debian 7 server?? </a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-konfigurasi-dan-instalasi-samba-server-di-debian-5">8.
+                                            cara konfigurasi dan instalasi samba server di debian 5</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#menurut-pendapat-anda-mengapa-dalam-menginstalasi-dan-mengkonfigurasiserver-kita-perlu-konfigurasi-web-server-apakah-keuntunganya">9.
+                                            Menurut pendapat anda mengapa dalam menginstalasi dan mengkonfigurasiserver kita perlu konfigurasi Web Server, Apakah keuntunganya ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tuliskan-bahan-bahan-yang-diperlukan-untuk-mengkonfigurasi-ftp-server-di-debian-%e2%80%8b">10.
+                                            Tuliskan bahan-bahan yang diperlukan untuk mengkonfigurasi FTP server di Debian.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-perintah-pada-linux-debian-untuk-mengaktifkanmenginstal-dhcp-server-web-server-dns-server-samba-server-mail-server%e2%80%8b">11.
+                                            Jelaskan perintah pada linux debian untuk mengaktifkan/menginstal DHCP Server, web server, DNS server, samba server, mail server​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#sebutkan-konfigurasi-dhcp-server-pada-debian-8-0">12.
+                                            Sebutkan konfigurasi DHCP Server pada debian 8.0.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tulisakan-langkah-langkah-konfigurasi-dhcp-server-pada-linux-debian%e2%80%8b">13.
+                                            tulisakan langkah langkah konfigurasi dhcp server pada Linux Debian​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-perbedaan-instalasi-dan-konfigurasi-remote-server-pada-so-jaringan-debian-8-dan-debian-10%e2%80%8b">14.
+                                            Jelaskan perbedaan instalasi dan konfigurasi remote server pada SO jaringan Debian 8 dan Debian 10​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#modul-tentang-mail-server-dan-langkah-konfigurasinya-pada-debian-%e2%80%8b">15.
+                                            modul tentang mail server dan langkah konfigurasinya pada debian !​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-mengetahui-konfigurasi-web-server-sudah-berhasil-atau-belum">16.
+                                            Bagaimana cara mengetahui konfigurasi web server sudah berhasil atau belum?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-konfigurasi-proxy-server-di-debian-menggunakan-virtualbox">17.
+                                            bagaimana cara konfigurasi proxy server di debian menggunakan virtualbox?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#sebutkan-perintah-dan-konfigurasi-ip-dalam-linux-debian-server">18.
+                                            Sebutkan perintah dan konfigurasi ip dalam Linux Debian server</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#kesimpulan-dari-konfigurasi-web-server-dan-dns-server%e2%80%8b">19.
+                                            kesimpulan dari konfigurasi web server dan DNS server​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tuliskan-bahan-bahan-yang-diperlukan-untuk-mengkonfigurasi-ftp-server-di-debian%e2%80%8b">20.
+                                            Tuliskan bahan-bahan yang diperlukan untuk mengkonfigurasi FTP server di Debian​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#20-sebutkan-langkah-langkah-instalasi-dan-konfigurasi-web-server">21.
+                                            20.	Sebutkan langkah langkah instalasi dan konfigurasi Web server</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-konfigurasi-proxy-server-debian-yang-benar">22.
+                                            bagaimana cara konfigurasi PROXY SERVER debian yang benar ??</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-sih-cara-konfigurasi-dhcp-router-server-di-linux-debian-6-berbasis-text">23.
+                                            bagaimana sih cara konfigurasi dhcp router server di linux debian 6 berbasis text?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-perbedaan-instalasi-dan-konfigurasi-remote-server-pada-so-jaringan-debian-8-dan-debian-10%e2%80%8b">24.
+                                            Jelaskan perbedaan instalasi dan konfigurasi remote server pada SO jaringan debian 8 dan debian 10​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#file-yang-digunakan-sebagai-etak-file-konfigurasi-alamat-ip-di-debian-adalahfile-yang-digunakan-sebagai-tempat-konfigurasi-utama-dari-proxy-server-adalahfile-yang-digunakan-sebagai-tempat-konfigura">25.
+                                            File yang digunakan sebagai etak file konfigurasi alamat IP di Debian adalah
+File yang digunakan sebagai tempat konfigurasi utama dari proxy server  adalah
+File yang digunakan sebagai tempat konfigurasi utama dari mail server  adalah
+File yang digunakan sebagai tempat konfigurasi utama dari DHCP server  adalah</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#aplikasi-server-web-yang-terdapat-diplatform-linux-server-debian-adalah">26.
+                                            Aplikasi server web yang terdapat diplatform linux server Debian adalah</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#secara-default-letak-dari-directoryroot-untuk-web-server-apache2-di-debian-adalah">27.
+                                            Secara default, letak dari DirectoryRoot untuk web server apache2 di Debian adalah</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-perintah-pada-linux-debian-untuk-menguji-konfigurasi-pada-dhcp-server-web-server-dns-server-samba-server-mail-server%e2%80%8b">28.
+                                            Jelaskan perintah pada linux debian untuk menguji konfigurasi pada DHCP Server, web server, DNS server, samba server, mail server​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pengertian-debian-web-server">29.
+                                            Pengertian debian web server</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pada-ms-windows-2003-server-untuk-mengkonfigurasi-web-server-kita-pilih">30.
+                                            Pada ms.windows 2003 server untuk mengkonfigurasi web Server kita pilih?</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="cara-mengkonfigurasikan-web-server-debian-yang-kesalahan-pada-test-web-server">
+                            1. cara mengkonfigurasikan web server debian yang kesalahan pada test web server</h2><br />
+                        saya boleh bertanya bagaimna cara untuk kita sendiri buat soal<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="konfigurasi-web-server-berdasarkan-prinsip-kerja-nya-di-ubuntu-server-dan-debian-server">
+                            2. konfigurasi web server berdasarkan prinsip kerja nya di ubuntu server dan Debian server?</h2><br />
+                        Sebuah level domain tertinggi<br />
+                                            <h2 class="ez-toc-section" id="instalasi-dan-konfigurasi-web-server-apache-menggunakan-debian-ios">
+                            3. Instalasi dan konfigurasi web server Apache menggunakan Debian IOS</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Cara Install dan Konfigurasi Web Server (Apache, PHP7, MariaDB) di Debian 9 “Stretch”
+</p><p>Web Server adalah aplikasi server yang sangat populer, Web Server berfungsi menyediakan layanan Web. Untuk menjalankan aplikasi berbasis Web dinamis, setidaknya membutuhkan 3 aplikasi Server, yaitu Web Server (disini menggunakan Apache), Text Processor (disini menggunakan PHP), lalu Database Server (disini menggunakan MariaDB / MySQL), opsional tambahkan Database management (disini menggunakan phpMyAdmin). Asumsinya telah tersedia Komputer Debian 9 yang telah terkonfigurasi IP Address, dan juga telah tersedia Repositori yang Siap digunakan. Berikut akan di bahas satu-persatu cara installasi dan konfigurasinya
+</p><p>
+</p><p>
+</p><p>1. Installasi Paket-paket Web Server
+</p><p>untuk menginstall paket-paket Web Server, gunakan perintah berikut
+</p><p>
+</p><p>apt install apache php7.0 mariadb-server phpmyadmin
+</p><p>
+</p><p>Sebeneranya tanpa melalukan konfigurasi apapun, Web Server sudah berjalan dan dapat digunakan / diakses, caranya buka alamat IP Server atau Alamat Domain (jika DNS sudah dikonfigurasi) dari Client.debian9_web_server_1
+</p><p>
+</p><p>2. Konfigurasi phpMyAdmin
+</p><p>phpMyAdmin bawaan Debian 9 tidak dapat langsung digunakan, oleh karena itu perlu dilakukan konfigurasi. Lalu secara default MariaDB (MySQL) di Debian 9 tidak memiliki password root (tidak seperti Debian versi sebelumnya), ini juga menjadi salah satu hal yang membuat phpMyAdmin tidak bisa diakses. Berikut adalah konfigurasinya :
+</p><p>
+</p><p>
+</p><p>mysql -u root -p mysql
+</p><p>
+</p><p>Lalu pada Konsol MariaDB, masukan perintah SQL berikut
+</p><p>
+</p><p>UPDATE user SET plugin=” WHERE user=’root’;
+</p><p>
+</p><p>flush privileges;
+</p><p>
+</p><p>exit
+</p><p>
+</p><p>debian9_web_server_2
+</p><p>
+</p><p>Agar phpMyAdmin dapat menerima akses user root tanpa password, ikuti langkah berikut :
+</p><p>
+</p><p>nano /etc/phpmyadmin/config.inc.php
+</p><p>
+</p><p>Uncomment baris ini $cfg[‘Servers’][$i][‘AllowNoPassword’] = TRUE;debian9_web_server_3
+</p><p>
+</p><p>Keluar dan Simpan, lalu coba buka phpMyAdmin dari client, caranya adalah buka http://alamat_server/phpmyadmin
+</p><p>
+</p><p>debian9_web_server_4
+</p><p>
+</p><p>Login dengan user root, password default kosongdebian9_web_server_5
+</p><p>
+</p><p>3. Mengganti Password root MariaDB (Opsional)
+</p><p>Untuk alasan keamanan, passwword root di MariaDB harus diganti karena defaultnya tidak ada passwordnya. Caranya adalah sebagai berikut :
+</p><p>
+</p><p>mysql_secure_installation
+</p><p>
+</p><p>Tekan Enter, Enter, sampai pada input New password, masukan password lalu tekan Enter, lalu konfirmasikan password, lalu tekan Enter.</p><p><strong>Penjelasan:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-mengkonfigurasi-web-server">
+                            4. bagaimana cara mengkonfigurasi web server</h2><br />
+                        1. Apt-get install apache 2<br />2. Cp/etc/apache2/sites-availlable/default/etc/apache2/sites-availlable/www<br />3. Nano/etc/apache2/sites-availlable/www<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="perbedaan-konfigurasi-debian-9-dan-debian-8-itu-apa">
+                            5. Perbedaan konfigurasi debian 9 dan debian 8 itu apa ?</h2><br />
+                        1. Kita harus install paket net-tools<br /><br />Untuk bisa menjalankan perintah ifconfig dalam debian 9, kita harus menginstall net-tools terlebih dahulu. Saat ingin mengintall bind9 untuk membangun dns server, kita juga membutuhkan paket tersebut.<br /><br /><br />2. Cara Mengetahui Ip address Debian 9 <br /><br />Setelah melakukan fresh install debian, umunya kita akan mengecek ip address dengan perintah ifconfig, namun dalam debian 9 belum terdapat paket tersebut, jadi kita menggunakan perintah ip a  atau ip addruntuk melihat ip address kita.<br /><br /><br />3. Perbedaan Nama Interface <br /><br />Pada debian 8, debian 7 dan versi sebelumnya, interface jaringan umumnya menggunakan nama eth0, eth1, dll. Namun, dalam debian 9, default interfacenya menggunakan nama enp0s3. Hal tersebut akan cukup membingungkan jika anda sudah terbiasa menggunakan debian 8.<br /><br /><br />4. Tidak ada paket Squirrelmail<br /><br />Setelah saya mencoba untuk membangun webmail server, saya sempat dibingungkan karena tidak ada paket squirrelmail. Sebagai gantinya, kita bisa menggunakan Roundcube untuk membangun webmail server.<br /><br /><br />5. Paket courier-pop<br /><br />Saat saya mencoba untuk membuat mail server, dan sebelumnya saya terbiasa menggunakan debian 8, saya juga sempat kebingungan karena tidak ada paket courier-pop, dan saya sempat untuk mengintall paket dovecot. Untuk itu anda harus mengintall courier-base dulu sebelum menginstall courier-pop.<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="file-konfigurasi-default-dari-sebuah-web-server-terletak-pada-file%e2%80%8b">
+                            6. file konfigurasi default dari sebuah web server terletak pada file​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>pada file “index. html” yang berada pada direktori “/var/www/html” atau di direktori dimana kamu mengatur akan menyimpan konfigurasi-konfigurasi file website pada langkah sebelumnya.</p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-membuat-login-proxy-pada-konfigurasi-debian-7-server">
+                            7. bagaimana cara membuat login proxy pada konfigurasi debian 7 server?? </h2><br />
+                        sepertinya tidak perlu login hanya install lalu kofigurasi proxynya di #pico /etc/squid/squid.conf terus tinggal masukan situs yang mau di blokir , restart selesai<br /><br />
+                                            <h2 class="ez-toc-section" id="cara-konfigurasi-dan-instalasi-samba-server-di-debian-5">
+                            8. cara konfigurasi dan instalasi samba server di debian 5</h2><br />
+                        apt-get install samba
+nano /etc/samba/smb.conf
+service samba restart
+mkdir /home/share
+chmod 777 /home/share<br />
+                                            <h2 class="ez-toc-section" id="menurut-pendapat-anda-mengapa-dalam-menginstalasi-dan-mengkonfigurasiserver-kita-perlu-konfigurasi-web-server-apakah-keuntunganya">
+                            9. Menurut pendapat anda mengapa dalam menginstalasi dan mengkonfigurasiserver kita perlu konfigurasi Web Server, Apakah keuntunganya ?</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>disesuaikan dengan webapp yang akan dijalankan asp, asp.net, java, coldfusion, php atw bahsa lainnya. juga disesuaikan kekuatan web estimasi akan terima hit seberapa banyak apakah cukup single webserver atw perlu balancer. keuntungannya kita bisa siapkan webserver sesuai kebutuhan jangan sampai bikin lag, malah down apalagi overkill</p><br />
+                                            <h2 class="ez-toc-section" id="tuliskan-bahan-bahan-yang-diperlukan-untuk-mengkonfigurasi-ftp-server-di-debian-%e2%80%8b">
+                            10. Tuliskan bahan-bahan yang diperlukan untuk mengkonfigurasi FTP server di Debian.​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1. Pastinya PC yekan hehe</p><p>2. iso debian (bisa cd juga) </p><p>3. Virtual Machine (kalau mau langsung tanpa vm juga boleh ehe) </p><p>4. konfigurasi repository</p><p>5. kabel LAN untuk test nantinya</p><p>6. konfigurasi</p><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-perintah-pada-linux-debian-untuk-mengaktifkanmenginstal-dhcp-server-web-server-dns-server-samba-server-mail-server%e2%80%8b">
+                            11. Jelaskan perintah pada linux debian untuk mengaktifkan/menginstal DHCP Server, web server, DNS server, samba server, mail server​</h2><br />
+                        <p>Perintah Menginstal </p><p></p><p>DHCP Server:</p><p><strong>sudo apt install -y isc-dhcp-server</strong></p><p></p><p>Web server:</p><p><strong>sudo apt install apache2</strong></p><p></p><p>DNS server:</p><p><strong>sudo apt install bind9</strong></p><p></p><p>Samba server:</p><p><strong>sudo apt install samba</strong></p><p></p><p>Mail server​:</p><p><strong>apt-get install curl net-tools bash-completion wget lsof nano</strong></p><p></p><p></p><p>Jangan lupa diberi tercerdas ya </p><br />
+                                            <h2 class="ez-toc-section" id="sebutkan-konfigurasi-dhcp-server-pada-debian-8-0">
+                            12. Sebutkan konfigurasi DHCP Server pada debian 8.0.</h2><br />
+                        <p> </p><p>Untuk pengkonfigurasian, langkah-langkahnya sebagai berikut.</p><p>Install dulu paket dhcp servernya.</p><p>root@debian:~# apt-get install isc-dhcp-server</p><p></p><p>Konfigurasi DHCP Server Debian 8 (1)</p><p>Tekan "Y" untuk melanjutkan.</p><p>Setting file konfigurasi DHCP.</p><p>root@debian:~# nano /etc/dhcp/dhcpd.conf</p><p>Cari kata "# A slightly different configuration for an internal subnet.", dan hapus tanda "#" dari subnet sampai tanda "}"</p><p>Konfigurasi DHCP Server Debian 8 (2) </p><p></p><p>Disini saya menggunakan IP address pada postingan sebelumnya. Untuk keterangan pengaturannya seperti berikut.</p><p>Subnet : IP network untuk client.</p><p>Netmask : IP netmask untuk client.</p><p>Range : jarak IP yang ingin digunakan untuk client.</p><p>Option domain-name-servers : IP DNS server.</p><p>Option domain-name : domain DNS server.</p><p>Option routers : IP DHCP server.</p><p>Option-broadcast-address : IP broadcast untuk client.</p><p>Kemudian save.</p><p>Ubah default interfaces DHCP server menjadi ethernet yang kita gunakan.</p><p>root@debian:~# nano /etc/default/isc-dhcp-server</p><p>Konfigurasi DHCP Server Debian 8 (3)</p><p>Restart DHCP servernya.</p><p></p><p>Lakukan pengujian pada komputer client, ubah settingan IP menjadi DHCP.</p><p>Konfigurasi DHCP Server Debian 8 (4)</p><p>Jika otomatis mendapat IP, maka DHCP berhasil</p><p> </p><p></p><br />
+                                            <h2 class="ez-toc-section" id="tulisakan-langkah-langkah-konfigurasi-dhcp-server-pada-linux-debian%e2%80%8b">
+                            13. tulisakan langkah langkah konfigurasi dhcp server pada Linux Debian​</h2><br />
+                        <p><strong>Penjelasan:</strong></p><p>nano etc/network/interfaces</p><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-perbedaan-instalasi-dan-konfigurasi-remote-server-pada-so-jaringan-debian-8-dan-debian-10%e2%80%8b">
+                            14. Jelaskan perbedaan instalasi dan konfigurasi remote server pada SO jaringan Debian 8 dan Debian 10​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>adalah protokol atau aplikasi yang memungkinkan pertukaran data antara dua perangkat jaringan yang lebih aman dibandingkan dengan telnet, rsh dan rlogin. SSH banyak digunakan pada sistem berbasis Linux dan Unix untuk mengakses akun shell.
+</p><p>
+</p><p>Dengan ssh semua percakapan antara server dan klien di enkripsi, artinya apabila percakapan tersebut disadap, penyadap tidak akan memahami isinya.</p><p><strong>Penjelasan:ini jawaban tercerdas saya y</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="modul-tentang-mail-server-dan-langkah-konfigurasinya-pada-debian-%e2%80%8b">
+                            15. modul tentang mail server dan langkah konfigurasinya pada debian !​</h2><br />
+                        <p> </p><p></p><p>masukkan file iso debian sesuai dengan yg kmu gunakan &gt; login sebagai root &gt; ketik apt-cdrom add &gt; ketik apt-get upgrade &gt; lalu ada pilihan y/n klik y &gt; klik ok &gt; pilih internet site &gt; lalu masukka domain kamu , klik ok &gt; tunggu proses selesai, klik yes &gt; ketik nano /etc/postfix/main.cf &gt; tmbhkn *home_mailbox=maildir* ,sv lalu exit &gt; </p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-mengetahui-konfigurasi-web-server-sudah-berhasil-atau-belum">
+                            16. Bagaimana cara mengetahui konfigurasi web server sudah berhasil atau belum?</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>dengan mengakses localhost pada server tersebut.</p><p><strong>Penjelasan:</strong></p><p>jika pertama kali melakukan konfigurasi, ketikkan pada browser http://localhost atau http://127.0.0.1</p><p>jika konfigurasi berhasil, maka akan muncul halaman </p><p>- Apahce2 / It's Work! (kalau webserver yang dipakai adalah apache2),</p><p>- Welcome to Nginx (kalau webserver yang dipakai adalah nginx)</p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-konfigurasi-proxy-server-di-debian-menggunakan-virtualbox">
+                            17. bagaimana cara konfigurasi proxy server di debian menggunakan virtualbox?</h2><br />
+                        apt-get install squid <br />lalu konfigurasi di .conf<br /><br />
+                                            <h2 class="ez-toc-section" id="sebutkan-perintah-dan-konfigurasi-ip-dalam-linux-debian-server">
+                            18. Sebutkan perintah dan konfigurasi ip dalam Linux Debian server</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>edisi males buka terminal </p><p>simplenya gini.</p><p>auto eth0</p><p>iface eth0 inet static</p><p>address 192.168.1.10</p><p>netmask 255.255.255.0</p><p>gateway 192.168.1.1</p><p><strong>Penjelasan:</strong></p><p>kalau mau lebih jelas silahkan buka <strong>https://www.mahirkoding.com/konfigurasi-ip-address-di-debian/</strong></p><br />
+                                            <h2 class="ez-toc-section" id="kesimpulan-dari-konfigurasi-web-server-dan-dns-server%e2%80%8b">
+                            19. kesimpulan dari konfigurasi web server dan DNS server​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>SIMPULAN DAN SARAN WEB SERVER SERVER DENGAN SERVER. SELESAINYA PERANCANGAN WEB SERVER DAN DNS...</p><p></p><p>Home/</p><p></p><p>Documents</p><p></p><p>Post on 19-Mar-2019</p><p></p><p>339 Views0 download</p><p></p><p>PREVIEW:</p><p>￼Click to see full reader</p><p></p><p>Report this document</p><p></p><p>SHARE</p><p></p><p>TRANSCRIPT OF KESIMPULAN DAN SARAN WEB SERVER SERVER DENGAN SERVER. SELESAINYA PERANCANGAN WEB SERVER DAN DNS...</p><p></p><p>BAB VKESIMPULAN DAN SARAN</p><p>5.1. Kesimpulan</p><p>Dalam penulisan Tugas Akhir ini telah diuraikan bagaimana perancangan</p><p>jaringan berdasarkan implementasi web server dan DNS server dengan</p><p>menggunakan Windows Server 2003 sebagai server. Maka dapat diambil</p><p>kesimpulan :</p><p>1. Perancangan Tugas Akhir jaringan ini dibuat untuk dapat</p><p>memberikan pengetahuan tentang cara membangun sebuah jaringan</p><p>sehingga dapat dimanfaatkan dan digunakan oleh pemakai.</p><p>2. Perancangan jaringan ini memudahkan bagi para pemakai yg</p><p>ingin mengakses internet sehingga pertukaran data, informasi dan</p><p>sharing perangkat lebih mudah dilakukan.</p><p>3. Dengan menggunakan internet, penyampaian informasi dapat lebih</p><p>luas tersebar di berbagai wilayah dan lebih mudah untuk</p><p>mengaksesnya.</p><p>5.2. Saran</p><p>Dengan selesainya Perancangan Web Server dan DNS Server ini, ada</p><p>beberapa saran yang dapat disampaikan, yaitu :</p><p>1. Diharapkan Tugas Akhir Perancangan Jaringan ini dapat</p><p>memberi sedikit pengetahuan tentang cara pembuatan jaringan sederhana.</p><p>2. Tugas Akhir ini masih banyak kekurangan dalam rancangan ini, diharapkan</p><p>rancangan ini dapat dikembangkan dengan lebih baik.</p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="tuliskan-bahan-bahan-yang-diperlukan-untuk-mengkonfigurasi-ftp-server-di-debian%e2%80%8b">
+                            20. Tuliskan bahan-bahan yang diperlukan untuk mengkonfigurasi FTP server di Debian​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>FTP (File Transfer Protocol)</p><p>FTP (File Transfer Protocol) adalah internet service yang dirancang untuk membuat sambungan ke suatu server yang khusus untuk melakukan transfer file. FTP ada protokol yang paling banyak digunakan untuk melakukan pertukaran data, memindahkan file dari tempat satu ke tempat lainya.</p><p>Memasang Aplikasi Proftpd</p><p>aplikasi yang akan kita gunakan kali ini untuk membuat ftp server adalah Proftpd, yang pertama pastikan komputer sudah memiliki repository dan tersambung ke repository tersebut.</p><p>gunakan superuser / root untuk melakukan pemasangan aplikasi.</p><p><strong>Penjelasan:</strong></p><p>semoga membantu ya dan bermanfaat bagi anda</p><br />
+                                            <h2 class="ez-toc-section" id="20-sebutkan-langkah-langkah-instalasi-dan-konfigurasi-web-server">
+                            21. 20.	Sebutkan langkah langkah instalasi dan konfigurasi Web server</h2><br />
+                        langkah"nya adalah<br />1. pertama kita harus menginstal  debian 7<br />2. mengkonfigurasi dns dan menyetingnya<br />3. mengkonfigurasi mail server<br />4. menyeting web server<br />selesai<br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-konfigurasi-proxy-server-debian-yang-benar">
+                            22. bagaimana cara konfigurasi PROXY SERVER debian yang benar ??</h2><br />
+                        Proxy Server nya menggunakan software apa ?<br />Konfigurasi Proxy server tergantung kebutuhan masing-masing <br />Ada yang menggunakan Proxy untuk Caching , Allow/Block Web , dsb<br />Untuk Lebih lanjut lengkap kok digoogle menurut saya masalah proxy itu<br />
+                                            <h2 class="ez-toc-section" id="bagaimana-sih-cara-konfigurasi-dhcp-router-server-di-linux-debian-6-berbasis-text">
+                            23. bagaimana sih cara konfigurasi dhcp router server di linux debian 6 berbasis text?</h2><br />
+                        -pastiin dulu alamat ip router tsb<br />-kalo udah tau, coba hubungkan pc kamu sama router tsb<br />-hubunginnya make kabel cross/straight ya<br />-kalo gatau alamat ip nya, kamu bisa liat jika udah kesambung sama routernya di yast-&gt;network, lihat ip baru routernya<br />-kalo udah tau langsung aja ke browser debian ketik \\alamatIPmu, misalnya \\192.168.1.1, jika sudah masuk web tsb yg kamu isi IP nya, kamu bisa setting dhcpnya disitu<br /><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-perbedaan-instalasi-dan-konfigurasi-remote-server-pada-so-jaringan-debian-8-dan-debian-10%e2%80%8b">
+                            24. Jelaskan perbedaan instalasi dan konfigurasi remote server pada SO jaringan debian 8 dan debian 10​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p> lihat penjelasan ya</p><p><strong>Penjelasan:</strong></p><p>adalah   protokol   atau   aplikasi   yang memungkinkan  pertukaran data  antara  dua  perangkat jaringan  yang  lebih  aman dibandingkan dengan telnet, rsh dan rlogin. SSH banyak digunakan pada sistem berbasis   Linux   dan   Unix untuk mengakses akun shell.</p><p></p><p>Dengan ssh semua percakapan  antara  server  dan  klien  di  enkripsi,  artinya  apabila  percakapan tersebut disadap, penyadap tidak akan memahami isinya.</p><br />
+                                            <h2 class="ez-toc-section" id="file-yang-digunakan-sebagai-etak-file-konfigurasi-alamat-ip-di-debian-adalahfile-yang-digunakan-sebagai-tempat-konfigurasi-utama-dari-proxy-server-adalahfile-yang-digunakan-sebagai-tempat-konfigura">
+                            25. File yang digunakan sebagai etak file konfigurasi alamat IP di Debian adalah
+File yang digunakan sebagai tempat konfigurasi utama dari proxy server  adalah
+File yang digunakan sebagai tempat konfigurasi utama dari mail server  adalah
+File yang digunakan sebagai tempat konfigurasi utama dari DHCP server  adalah</h2><br />
+                        file untuk konfigurasi IP address bernama "<strong>interfaces</strong>", yang terletak di /etc/network/<br /><br />file untuk konfigurasi proxy bernama "<strong>squid.conf</strong>", terletak di "/etc/squid/"<br /><br />kalo untuk mail server, bukan webmail server maka file tersebut bernama "<strong>main.cf</strong>", filenya terletak di "/etc/postfix/"<br /><br />file untuk DHCP yaitu "<strong>dhcpd.conf</strong>", file tsb terletak di "/etc/dhcp3/"<br /><br />nah itu nama-nama file utama untuk service yang sering digunakan untuk server pada debian, semua file akan ada apabila service tersebut sudah terinstall, jadi pastikan servicenya sudah perinstall terlebih dahulu sebelum mengkonfigurasi semua file tersebut.<br /><br />Semoga membantu..<br />
+                                            <h2 class="ez-toc-section" id="aplikasi-server-web-yang-terdapat-diplatform-linux-server-debian-adalah">
+                            26. Aplikasi server web yang terdapat diplatform linux server Debian adalah</h2><br />
+                        <p><strong>Jawaban: apache2, NGINX, XAMPP</strong></p><p></p><p><strong>Penjelasan:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="secara-default-letak-dari-directoryroot-untuk-web-server-apache2-di-debian-adalah">
+                            27. Secara default, letak dari DirectoryRoot untuk web server apache2 di Debian adalah</h2><br />
+                        <strong>Secara default, letak dari directory root untuk webserver apache pada debian adalah</strong> berada di folder var/www/html. Apache2 merupakan salah satu aplikasi web server yang bersifat gratis. Apache2 merupakan salah satu web server yang terkenal dan banyak penggunanya.<br /><br />Saat kita mengakses suatu halaman wesbite, maka sebenarnya kita sedang mengakses sebuah file pada folder var/www/html apabila website kita menggunakan web server apache. Untuk beberapa alasan kemanan, biasanya pengembang website sudah tidak meletakkan file pada folder default tersebut. <br /><br />Demikian pembahasan singkat mengenai letak folder directory root yang biasanya terletak pada folder var/www/html. Untuk membaca materi lainnya mengenai web server dapat dibaca pada link berikut<br /><br />Penjelasan web server dan mail server brainly.co.id/tugas/760354<br /><br />Detil tambahan <br />Kelas : 3 SMP<br />Materi : Webserver Apache 2<br />Kata kunci : Webserver Apache 2<br /><br /><br /><br /><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-perintah-pada-linux-debian-untuk-menguji-konfigurasi-pada-dhcp-server-web-server-dns-server-samba-server-mail-server%e2%80%8b">
+                            28. Jelaskan perintah pada linux debian untuk menguji konfigurasi pada DHCP Server, web server, DNS server, samba server, mail server​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Menguji DHCP server:</p><p>./check_dhcp -v -s &lt;dhcp_server_address&gt; -r &lt;expected_ip_address&gt; -m &lt;mac_address_touse&gt;</p><p></p><p>Menguji DNS server:</p><p>$ cat /etc/resolv.conf</p><p><strong></strong></p><p>Menguji Web server:</p><p>$ telnet hostname 80</p><p></p><p>Menguji Mail server:</p><p>openssl s_client -connect smtp.pepipost.com:587 -starttls smtp </p><p></p><p>Menguji Samba server:</p><p>sudo systemctl status smbd</p><br />
+                                            <h2 class="ez-toc-section" id="pengertian-debian-web-server">
+                            29. Pengertian debian web server</h2><br />
+                        sebuah perangkat lunak yg berfungsi menerima permintaan HTTP atau HTTPS dari client dan mengirimkan kembali hasilnya dalam bentuk halaman-halaman website umumnya yang berbentuk HTML atau PHP.<br />
+                                            <h2 class="ez-toc-section" id="pada-ms-windows-2003-server-untuk-mengkonfigurasi-web-server-kita-pilih">
+                            30. Pada ms.windows 2003 server untuk mengkonfigurasi web Server kita pilih?</h2><br />
+                        Internet Information Services Manager <br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/wnrLSWa40gw?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>sbmptn</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/arti-lagu-that-s-why-you-go-away.html">Arti Lagu That s Why You Go Away</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/cara-sembunyikan-aplikasi-di-vivo-y91.html">Cara Sembunyikan Aplikasi Di Vivo Y91</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/termasuk-jenis-apakah-iklan-tersebut.html">Termasuk Jenis Apakah Iklan Tersebut</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/bayangan-pada-cermin-datar-bersifat-semu-artinya.html">Bayangan Pada Cermin Datar Bersifat Semu Artinya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/cara-memberikan-warna-pada-tabel.html">Cara Memberikan Warna Pada Tabel</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/warna-fuschia-dan-magenta.html">Warna Fuschia Dan Magenta</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/berikut-ini-yang-termasuk-isolator-listrik-adalah.html">Berikut Ini Yang Termasuk Isolator Listrik Adalah</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/yovie-nuno-merindu-lagi-pada-kekasih-orang-lirik.html">Yovie Nuno Merindu Lagi Pada Kekasih Orang Lirik</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/dewiq.html">Dewiq</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/hasil-sidang-ppki-tanggal-22-agustus.html">Hasil Sidang Ppki Tanggal 22 Agustus</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/perbedaan-hair-spa-dan-creambath.html">Perbedaan Hair Spa Dan Creambath</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/kulit-gatal-bintik-bintik-kecil-berair.html">Kulit Gatal Bintik Bintik Kecil Berair</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/ciri-empiris-ilmu-sosiologi.html">Ciri Empiris Ilmu Sosiologi</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/lampu-akan-menyala-paling-terang-bila-sakelar.html">Lampu Akan Menyala Paling Terang Bila Sakelar</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/hamil-34-minggu-berapa-bulan.html">Hamil 34 Minggu Berapa Bulan</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/petunjuk-arah-pada-peta.html">Petunjuk Arah Pada Peta</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/ayat-yang-artinya-janganlah-kalian-membentaknya-adalah.html">Ayat Yang Artinya Janganlah Kalian Membentaknya Adalah</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/kenampakan-alam-apakah-yang-tampak-pada-gambar-di-atas.html">Kenampakan Alam Apakah Yang Tampak Pada Gambar Di Atas</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/tabung-berbentuk.html">Tabung Berbentuk</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/pasangan-larutan-berikut-yang-merupakan-elektrolit-kuat-adalah.html">Pasangan Larutan Berikut Yang Merupakan Elektrolit Kuat Adalah</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://sangpengajarku.github.io"
+                            itemprop="url">QnA</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://sangpengajarku.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+    <script type='text/javascript' src='//jd3j7g5z1fqs.com/96/78/7a/96787a1945876b1a9c10f79941441964.js'></script>
+<script type='text/javascript' src='//jd3j7g5z1fqs.com/b4/f1/ef/b4f1ef8dfe59b7fa68754094cf6c8e0e.js'></script>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4739059,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4739059&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>

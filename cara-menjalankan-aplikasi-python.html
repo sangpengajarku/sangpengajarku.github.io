@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cara Menjalankan Aplikasi Python - QnA</title>
+    <meta name="description" content="Cara Menjalankan Aplikasi Python, , , , , , , 0, Membuat program kasir sederhana menggunakan aplikasi python #, www.youtube.com, 1280 x 720, jpeg, , 20, cara-menjalankan-aplikasi-python, QnA" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cara Menjalankan Aplikasi Python - QnA" />
+    <meta property="og:description" content="Cara Menjalankan Aplikasi Python, , , , , , , 0, Membuat program kasir sederhana menggunakan aplikasi python #, www.youtube.com, 1280 x 720, jpeg, , 20, cara-menjalankan-aplikasi-python, QnA" />
+    <meta property="og:site_name" content="QnA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cara Menjalankan Aplikasi Python - QnA" />
+    <meta name="twitter:description" content="Cara Menjalankan Aplikasi Python, , , , , , , 0, Membuat program kasir sederhana menggunakan aplikasi python #, www.youtube.com, 1280 x 720, jpeg, , 20, cara-menjalankan-aplikasi-python, QnA" />
+    <link rel='stylesheet' id='generate-style-css' href='https://sangpengajarku.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://sangpengajarku.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://sangpengajarku.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://sangpengajarku.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://sangpengajarku.github.io">Home</a></li>
+                        </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://sangpengajarku.github.io" rel="home"> QnA</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">Cara Menjalankan Aplikasi Python</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">dimassahputra329</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=Cara+Menjalankan+Aplikasi+Python" alt="Cara Menjalankan Aplikasi Python">
+                    </div>
+                    <p></p>
+                    <p>tolong buatkan progam dengan aplikasi python​</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tolong-buatkan-progam-dengan-aplikasi-python%e2%80%8b">1.
+                                            tolong buatkan progam dengan aplikasi python​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bisakah-kita-menggunakan-program-linux-atau-python-sebagai-pengendali-aplikasi-lain">2.
+                                            bisakah kita menggunakan program linux atau python sebagai pengendali aplikasi lain</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-menjalankan-python-yang-sudah-terinstal">3.
+                                            bagaimana menjalankan python yang sudah terinstal.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bahasa-pemograman-python-buatlah-sebuah-aplikasi-python-yang-dapat-mengubah-array-dibawah-ini-array-2-7-5-3-12-sehingga-menghasilkan-output-genap-ganjil-ganjil-ga">4.
+                                            ----- Bahasa Pemograman PYTHON -----   
+Buatlah sebuah aplikasi python yang dapat mengubah Array dibawah ini 
+Array : [ 2 , 7 , 5 , 3 , 12 ]
+Sehingga menghasilkan output
+[ Genap , Ganjil , Ganjil , Ganjil , Genap ]
+----- Beri sedikit tambahan penjelasan -----</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-membuat-fungsi-di-python-bagaimana-sih">5.
+                                            Cara membuat fungsi di python bagaimana sih</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-bagaimana-cara-menggabungkan-list-dalam-kesatuan-python">6.
+                                            Jelaskan bagaimana cara menggabungkan list dalam kesatuan python ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-mengecek-apakah-sebuah-file-eksis-dengan-python-maaf-bingung">7.
+                                            Bagaimana cara mengecek apakah sebuah file eksis dengan Python? ...maaf bingung</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-membuat-program-dengan-bahasa-pemrograman-python-secara-sederhana">8.
+                                            bagaimana cara membuat program dengan bahasa pemrograman python secara sederhana?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-membuat-bot-line-protect-lewat-python">9.
+                                            CARA MEMBUAT BOT line protect lewat python </a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#kuis-1-cara-membuat-fungsi-di-python">10.
+                                            Kuis ----
+1. Cara membuat fungsi di Python.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-mengerjakan-soal-algoritma-persegi-panjang-dengan-python%e2%80%8b">11.
+                                            cara mengerjakan soal algoritma persegi panjang dengan python​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-konversi-data-dari-boolean-ke-float-di-python">12.
+                                            cara konversi data dari boolean ke float di python</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-mengetahui-platform-os-menggunakan-python%e2%80%8b">13.
+                                            cara mengetahui platform os menggunakan python​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bahasa-pemrograman-yang-bertujuan-umum-dan-digunakan-untuk-berbagai-aplikasi-yaitu-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-c-c-java">14.
+                                            Bahasa pemrograman yang bertujuan umum dan digunakan untuk berbagai aplikasi yaitu ... *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. C. C++, JAVA, C#, PYTHON
+D. Assembly (membuat aplikasi pemrograman mesin)</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-sebuah-program-yang-menampilkan-angka-1-50-kecuali-angka-yang-merupakan-anggota-deret-fibonanci-menggunakan-array-dan-perulanganmenggunakan-aplikasi-python">15.
+                                            Buatlah sebuah program yang menampilkan angka 1-50 kecuali angka 
+yang merupakan anggota deret fibonanci menggunakan (array dan perulangan)menggunakan aplikasi python</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#gimana-cara-membuat-module-di-python%e2%80%8b">16.
+                                            Gimana cara membuat module di python?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-melakukan-web-scraping-dengan-python%e2%80%8b">17.
+                                            Bagaimana cara melakukan web scraping dengan python​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buat-sebuah-program-yang-menerima-input-bilangan-decimal-kemudian-ubah-dalam-bentuk-angka-romawi-batasan-angka-1-%e2%80%931000-menggunakan-perulangan-dengan-aplikasi-python">18.
+                                            Buat sebuah program yang menerima input bilangan decimal 
+kemudian ubah dalam bentuk angka Romawi! (batasan angka 1 –1000 menggunakan perulangan dengan aplikasi python</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bahasa-pemrograman-yang-bukan-bertujuan-khusus-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-assembly-membuat-aplikasi-pemrograman-mesind-c">19.
+                                            Bahasa pemrograman yang bukan bertujuan khusus : *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. Assembly (membuat aplikasi pemrograman mesin)
+D. C. C++, JAVA, C#, PYTHON</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-kerja-python-%e2%80%8b">20.
+                                            bagaimana cara kerja python ?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tuliskan-cara-menyusun-array-menggunakan-bahasa-python">21.
+                                            tuliskan cara menyusun array menggunakan bahasa python</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-perbedaan-python-3-dan-python-2">22.
+                                            Apa perbedaan python 3 dan python 2 ??</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-parsing-json-di-python">23.
+                                            cara parsing json di python ??</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#idle-merupakan-program-editor-bawaan-python-idle-bisa-digunakan-dalam-untuk-menjalankan-python-dalam-mode-interaktif-arti-interaktif-di-sini-adalah">24.
+                                            IDLE merupakan program editor bawaan Python. IDLE bisa digunakan dalam untuk menjalankan python dalam mode interaktif. Arti interaktif di sini adalah: *</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#saya-kan-sudah-bisa-oop-pythonapa-yang-harus-dipelajari-setelah-selesai-belajar-oop-python%e2%80%8b">25.
+                                            saya kan sudah bisa OOP python,apa yang harus dipelajari setelah selesai belajar OOP python?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-program-menggunakan-fungsi-pada-python-dengan-mengaplikasikan-fungsi-matematika-fungsi-nomor-acak-dan-fungsi-trigonometri">26.
+                                            Buatlah program menggunakan fungsi pada python dengan mengaplikasikan fungsi matematika, fungsi nomor acak, dan fungsi Trigonometri!.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#khusus-yang-tau-coding-1-aplikasi-apa-saja-yang-support-dengan-java2-python-biasa-digunakan-untuk3-html-dan-php-support-dengan%e2%80%8b">27.
+                                            Khusus Yang Tau Coding...1.Aplikasi Apa Saja Yang Support Dengan Java?2.Python Biasa Digunakan Untuk?3.Html Dan PHP Support Dengan?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-mengatasi-error-waktu-install-python-extension-%e2%80%8b">28.
+                                            bagaimana cara mengatasi error waktu install python extension ? ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#3-bagaimana-cara-mengubah-tipe-data-dari-suatu-variabel-dalam-python-%e2%80%8b">29.
+                                            3. Bagaimana cara mengubah tipe data dari suatu variabel dalam Python? ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#siapa-pencipta-bahasa-pythonapa-fungsi-bahasa-python-pada-tempat-industri">30.
+                                            Siapa pencipta bahasa python?
+apa fungsi bahasa python pada tempat industri?</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="tolong-buatkan-progam-dengan-aplikasi-python%e2%80%8b">
+                            1. tolong buatkan progam dengan aplikasi python​</h2><br />
+                        Program Python<p>Berikut adalah program Python untuk menentukan harga setelah diskon yang didapat pelanggan. Dalam program ini, kita buat yang sederhana saja (tanpa def function atau method).</p><p></p><p><strong>Perhatikan Gambar 1, baris 2-17</strong></p><p>========</p><p><strong>toko </strong>= input("Masukkan nama toko: ")</p><p></p><p><strong>hari </strong>= int(input("\nMasukkan hari tanggal pembelian: "))</p><p><strong>bulan </strong>= int(input("Masukkan bulan tanggal pembelian: "))</p><p><strong>tahun </strong>= int(input("Masukkan tahun tanggal pembelian: "))</p><p><strong>tanggal </strong>= ("{}/{}/{}".format(<strong>hari</strong>, <strong>bulan</strong>, <strong>tahun</strong>))</p><p></p><p><strong>kasir </strong>= input("\nMasukkan nama kasir: ")</p><p></p><p><strong>pelanggan </strong>= input("Masukkan nama pelanggan: ")</p><p></p><p><strong>total_beli </strong>= int(input("Masukkan total pembelian: "))</p><p>========</p><p>Bagian ini adalah dimana pengguna/user menginput data seperti nama toko, tanggal pembelian (hari, bulan, tahun), nama kasir, nama pelanggan, dan total harga beli pelanggan.</p><p>Untuk tanggal, kita input satu-satu untuk hari, bulan, dan tahun supaya nanti kita bisa format sesuai keinginan, menggunakan fungsi ".format()" setelah string (perhatikan lampiran gambar 1 baris ke-8).</p><p></p><p></p><p>Selanjutnya, <strong>Perhatikan Gambar 2, baris 21-44</strong></p><p>========</p><p>if <strong>total_beli </strong>&gt;= 300000:</p><p>    <strong>persen </strong>= 0.3</p><p>    <strong>harga_akhir </strong>= <strong>total_beli </strong>- (<strong>persen </strong>* <strong>total_beli</strong>)</p><p></p><p>elif (<strong>total_beli </strong>&gt;= 100000) and (<strong>total_beli </strong>&lt; 300000):</p><p>    <strong>persen </strong>= 0.15</p><p>    <strong>harga_akhir </strong>= <strong>total_beli </strong>- (<strong>persen </strong>* <strong>total_beli</strong>)</p><p></p><p>elif (<strong>total_beli </strong>&gt;= 50000) and (<strong>total_beli </strong>&lt; 100000):</p><p>    <strong>persen </strong>= 0.02</p><p>    <strong>harga_akhir </strong>= <strong>total_beli</strong> - (<strong>persen </strong>* <strong>total_beli</strong>)</p><p></p><p>else:</p><p>    <strong>persen </strong>= 0</p><p>    <strong>harga_akhir </strong>= <strong>total_beli </strong>- (<strong>persen </strong>* <strong>total_beli</strong>)</p><p>========</p><p>Bagian ini menggunakan kondisi If-Else untuk menghitung harga setelah diskon yang didapat pelanggan, berdasarkan kondisi yang diberi.</p><p>Logika If-Else adalah sebagai berikut:</p>Pertama, cek apakah kondisi "If" adalah BENAR. Jika kondisi BENAR, maka perintah-perintah didalamnya akan dijalankan. Tidak perlu melanjutkan pengecekan ke kondisi berikutnya.Jika kondisi "If" adalah SALAH, maka akan berlanjut ke "elif" atau "else if" pertama setelah "If". Jika kondisi "elif" pertama adalah BENAR, maka perintah-perintah didalamnya akan dijalankan. Tidak perlu melanjutkan pengecekan ke kondisi berikutnya.Jika kondisi "elif" pertama adalah SALAH, maka lanjut ke kondisi "elif" kedua. Jika kondisi "elif" kedua adalah BENAR, maka perintah-perintah didalamnya akan dijalankan. Tidak perlu melanjutkan pengecekan ke kondisi berikutnya. Dan seterusnya sampai "elif" terakhir...Namun, jika tidak ada atau tidak ada lagi "elif", maka kondisi "else" akan dijalankan. "Else" selalu ditempatkan di akhir, dimana kondisi "else" adalah kondisi-kondisi selain kondisi sebelumnya. Misalnya "if (x &gt;= 5)", maka kondisi "else" adalah "(x &lt; 5)". Misalnya "If (x = 5)" maka kondisi "else" adalah "(x != 5)". Dan seterusnya...<p></p><p>Selanjutnya, <strong>Perhatikan Gambar 3, baris 48-57</strong></p><p>========</p><p></p><p>print("\n==================================================")</p><p>print("{:^50s}".format(<strong>toko</strong>))</p><p>print("\n{:&lt;30s} = {}".format("Tanggal pembelian", <strong>tanggal</strong>))</p><p>print("{:&lt;30s} = {}".format("Nama Kasir", <strong>kasir</strong>))</p><p>print("{:&lt;30s} = {}".format("Nama Pelanggan", <strong>pelanggan</strong>))</p><p></p><p>print("\n{:&lt;30s} = {}".format("Total Harga", <strong>total_beli</strong>))</p><p>print("{:&lt;30s} = {}%".format("Diskon", int(<strong>persen</strong>*100)))</p><p>print("{:&lt;30s} = {}".format("Total Harga setelah diskon", int(<strong>harga_akhir</strong>)))</p><p>print("==================================================")</p><p></p><p>========</p><p>Bagian ini adalah bagian keluaran, dimana menampilkan semua data yang telah diinput oleh pengguna/user. Bagian ini dapat ditulis sesuai keinginan, namun jangan lupa menampilkan semua data-data yang telah diinput oleh pengguna.</p><p></p><p><strong>Contoh keluaran terdapat pada lampiran gambar ke 4 dan 5.</strong></p><p><strong></strong></p><p><strong>#FeyRune ^_^</strong></p>~Semoga membantu~<br />
+                                            <h2 class="ez-toc-section" id="bisakah-kita-menggunakan-program-linux-atau-python-sebagai-pengendali-aplikasi-lain">
+                            2. bisakah kita menggunakan program linux atau python sebagai pengendali aplikasi lain</h2><br />
+                        <p>Sangat tidak apple-to-apple apabila membandingkan linux dengan python. Linux adalah antarmuka yang dipakai buat berkomunikasi langsung dengan mesin / hardware. Kemudian ada bahasa C (dan sekawanannya), bahasa tingkat rendah, yang dipakai untuk menyuruh kernel (dalam hal ini linux) biar dia menginstruksikan mesin sesuai yang diminta. Barulah di tingkat selanjutnya (tingkat tinggi) ada python, yang tugasnya memudahkan orang menulis bahasa C, dia sifatnya hanya interpreter ke C.</p><p>Karena tidak dituliskan aplikasinya dalam platform apa, dan kebetulan saya adalah web developer, maka saya akan menjawab dari perspektif seorang pengembang aplikasi web.</p><p>Bisakah kita menggunakan program "A" sebagai pengendali aplikasi lain? Tentu jawabannya adalah bisa. Tetapi kita harus punya akses ke sumber-kode aplikasi lain yang dimaksud. Karena kita harus menghubungkannya ke server melalui websocket, yang tugasnya itu mengecek server kalau ada perubahan, ya perilaku aplikasi ini berubah sesuai yang diinstruksikan dalam sumber kode (misal: server A diubah data nama aplikasi, di aplikasi lain akan mengubah nama aplikasinya).</p><p>Sekarang, aplikasi web yang dimaksud sebagai pengendali, tugasnya adalah mengubah isi dari data nama aplikasi yang ada di server A. Begitulah.</p><p>Saya jawab menggunakan teknologi web karena masih berhubungan dengan python dan dijalankan menggunakan sistem linux.</p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-menjalankan-python-yang-sudah-terinstal">
+                            3. bagaimana menjalankan python yang sudah terinstal.</h2><br />
+                        Windows<br />Pada windows file .py dapat dijalankan dengan langkah-langkah sebagai berikut:<br />Mari kita buat file halloworld.py kemudian letakan misalnya pada direktori C:\pythonCode\<br />Isikan file tersebut dengan perintah berikut, kemudian simpan.<br />    print 'hallo world'<br />    print 2 ** 10<br />Untuk menjalankannya buka terminal kemudian arahkan direktori aktif ke direktori dari python yang terinstal. Defaultnya terdapat pada C:\Python27\ kemudian ketikan perintah berikut pada command line:<br />    python "C:\pythonCode\halloworld.py"<br />Setelah mengetikan perintah tersebut maka akan langsung tampil seperti berikut<br />    hallo world<br />    1024<br />done!<br />
+                                            <h2 class="ez-toc-section" id="bahasa-pemograman-python-buatlah-sebuah-aplikasi-python-yang-dapat-mengubah-array-dibawah-ini-array-2-7-5-3-12-sehingga-menghasilkan-output-genap-ganjil-ganjil-ga">
+                            4. ----- Bahasa Pemograman PYTHON -----   
+Buatlah sebuah aplikasi python yang dapat mengubah Array dibawah ini 
+Array : [ 2 , 7 , 5 , 3 , 12 ]
+Sehingga menghasilkan output
+[ Genap , Ganjil , Ganjil , Ganjil , Genap ]
+----- Beri sedikit tambahan penjelasan -----</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>## Array Data</p><p>dataA = [2, 7, 5, 3, 12]</p><p>## Mengambil panjang data pada array</p><p>dataLen = len(dataA);</p><p>## pengecekan setiap data pada array</p><p>for x in range(dataLen):</p><p>    if dataA[x] % 2 == 0:</p><p>        print("Genap", end="")</p><p>    else:</p><p>        print("Ganjil", end="")</p><p></p><p>    if x &lt; dataLen - 1:</p><p>        print(" , ", end="")</p><p></p><p><strong>Penjelasan:</strong></p><p>Pada perulangan For akan diulangi sebanyak panjang atau jumlah data pada Array: dataA. Setiap data pada array akan di cek pada decision (IF) apakah nilai / angka nya termasuk genap atau ganjil, untuk mengeceknya dengan menggunakan modulo (simbol %), modulo berarti sisa bagi, dimana jika sebuah angka genap jika dibagi 2 akan memiliki sisa bagi 0 dan ganjil akan memiliki sisa bagi 1.</p><p>Decision IF ( x &lt; dataLen - 1 ) digunakan untuk menampilkan pemisah output berupa tanda koma.</p><br />
+                                            <h2 class="ez-toc-section" id="cara-membuat-fungsi-di-python-bagaimana-sih">
+                            5. Cara membuat fungsi di python bagaimana sih</h2><br />
+                        <p>Cara membuat fungsi di python adalah def nama_variable():</p><br /><p>Contoh :</p><br /><p>def nama(): --&gt;function di python</p><p>print"Hallo"</p><p>nama()--&gt; pemanggilan fungsi </p><br /><p>Output : Hallo</p><br /><p>Semoga Membantu</p><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-bagaimana-cara-menggabungkan-list-dalam-kesatuan-python">
+                            6. Jelaskan bagaimana cara menggabungkan list dalam kesatuan python ?</h2><br />
+                        <p>Jawaban:</p><p>listone = [1,2,3]</p><p>listtwo = [4,5,6]</p><p></p><p>joinedlist = listone + listtwo</p><p>&gt;&gt;&gt; [1,2,3,4,5,6]</p><p></p><p>Penjelasan:</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-mengecek-apakah-sebuah-file-eksis-dengan-python-maaf-bingung">
+                            7. Bagaimana cara mengecek apakah sebuah file eksis dengan Python? ...maaf bingung</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>cara mengecek apakah file tersebut berkestensi Python yaitu dengan melihat akhiran file tersebut apakah memiki format <strong>.py</strong>, biasa nya kalo di windows ekstensi file itu di sembunyikan, jadi kalo kamu user windows coba di cek apakah setting file ekstensi di sembunyikan atau tidak</p><p><strong>Penjelasan:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-membuat-program-dengan-bahasa-pemrograman-python-secara-sederhana">
+                            8. bagaimana cara membuat program dengan bahasa pemrograman python secara sederhana?</h2><br />
+                        Untuk belajar bahasa pemrograman, kita juga harus belajar tentang logika dan algoritma (alur pemecahan masalah). Bahasa pemrograman python dpt anda lihat di https://www.python.org/ dan silahkan baca dokumentasi untuk cara penggunaannya.<br /><br />manfaatkan banyak forum atau google untuk mendukung solusi dari permasalahan-permasalahan yg anda temui selama proses belajar. semoga membantu :)<br />
+                                            <h2 class="ez-toc-section" id="cara-membuat-bot-line-protect-lewat-python">
+                            9. CARA MEMBUAT BOT line protect lewat python </h2><br />
+                        Pertama Harus ada script dulu<br />Truss pake python<br />Jalanin di server<br />Selesai<br />
+                                            <h2 class="ez-toc-section" id="kuis-1-cara-membuat-fungsi-di-python">
+                            10. Kuis ----
+1. Cara membuat fungsi di Python.</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Fungsi adalah blok kode terorganisir dan dapat digunakan kembali yang digunakan untuk melakukan sebuah tindakan/action. Fungsi memberikan modularitas yang lebih baik untuk aplikasi Anda dan tingkat penggunaan kode yang tinggi.</p><br />
+                                            <h2 class="ez-toc-section" id="cara-mengerjakan-soal-algoritma-persegi-panjang-dengan-python%e2%80%8b">
+                            11. cara mengerjakan soal algoritma persegi panjang dengan python​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>panjang=30</p><p>lebar=20</p><p>panjang*lebar=</p><br />
+                                            <h2 class="ez-toc-section" id="cara-konversi-data-dari-boolean-ke-float-di-python">
+                            12. cara konversi data dari boolean ke float di python</h2><br />
+                        <p>Tutorial Python 3 ini akan memandu Anda mengenai konversi jenis data termasuk Metode Python float akan mengonversi integer ke float.</p><br />
+                                            <h2 class="ez-toc-section" id="cara-mengetahui-platform-os-menggunakan-python%e2%80%8b">
+                            13. cara mengetahui platform os menggunakan python​</h2><br />
+                        <p>import platform</p><p></p><p>platform.system()</p><p># OUTPUT: Linux/Windows/Darwin (OS X)</p><p></p><p>platform.release()</p><p># OUTPUT: Versi OS atau kernel</p><br />
+                                            <h2 class="ez-toc-section" id="bahasa-pemrograman-yang-bertujuan-umum-dan-digunakan-untuk-berbagai-aplikasi-yaitu-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-c-c-java">
+                            14. Bahasa pemrograman yang bertujuan umum dan digunakan untuk berbagai aplikasi yaitu ... *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. C. C++, JAVA, C#, PYTHON
+D. Assembly (membuat aplikasi pemrograman mesin)</h2><br />
+                        <p><strong>Jawaban</strong><strong>:</strong></p><p>C. C, C++, Java, C#, Python.</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="buatlah-sebuah-program-yang-menampilkan-angka-1-50-kecuali-angka-yang-merupakan-anggota-deret-fibonanci-menggunakan-array-dan-perulanganmenggunakan-aplikasi-python">
+                            15. Buatlah sebuah program yang menampilkan angka 1-50 kecuali angka 
+yang merupakan anggota deret fibonanci menggunakan (array dan perulangan)menggunakan aplikasi python</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Contoh kode program tersebut:</p><p># Menampilkan bilangan 1-50</p><p># kecuali yang termasuk deret fibonacci</p><p></p><p># Deret fibonacci (cuplikan)</p><p># Implementasi menggunakan list sebagai array</p><p># Jika menggunakan "array", </p><p># harus import module array atau numpy</p><p>fibo = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</p><p></p><p>for bil in range (1, 51):</p><p>    if bil not in fibo:</p><p>        print(bil, end=" ")</p><p>        </p><p><strong>Penjelasan:</strong></p><p>Untuk alasan kemudahan, deret fibonacci didaftarkan dalam list sebagai array. Dalam baris komentar di atas sudah saya jelaskan bahwa jika ingin menggunakan tipe data yang benar-benar array, harus import module lain.</p><p>Hasil eksekusi dapat dilihat pada gambar.</p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="gimana-cara-membuat-module-di-python%e2%80%8b">
+                            16. Gimana cara membuat module di python?​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1.membuat dan memasukkan modul</p><p>2.mengakses modul dari direktori lain</p><p>Membuat dan memasukkan module</p><p></p><p>Mengakses module dari direktor lain</p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-melakukan-web-scraping-dengan-python%e2%80%8b">
+                            17. Bagaimana cara melakukan web scraping dengan python​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1. pilih url/web yang akan di scrap</p><p>2. siapakan tools untuk scraping, bisa menggunakan Jupiter python atau langsung menggunakan tools google yaitu google collab</p><p>3. install library scraping yang dibutuhkan</p><p>4. import library yang dibutuhkan selama proses scraping. misal library nump, pandas, nltk, dll</p><p>5. lakukan scraping data sesuai kebutuhan</p><p>6. setelah data didapat, ambil data yg sekiranya diperlukan untuk analisis data kemudian convert ke bentuk file yg diinginkan. misalnya ke bentuk Excel/csv</p><br />
+                                            <h2 class="ez-toc-section" id="buat-sebuah-program-yang-menerima-input-bilangan-decimal-kemudian-ubah-dalam-bentuk-angka-romawi-batasan-angka-1-%e2%80%931000-menggunakan-perulangan-dengan-aplikasi-python">
+                            18. Buat sebuah program yang menerima input bilangan decimal 
+kemudian ubah dalam bentuk angka Romawi! (batasan angka 1 –1000 menggunakan perulangan dengan aplikasi python</h2><br />
+                        <p><strong>Jawaban dan Penjelasan:</strong></p><p>Kode program Python di bawah ini dibuat tanpa menggunakan dictionary, yaitu nilai-nilai yang menjadi referensi dan disimpan dalam list/array. Dengan menggunakan dictionary, program konversi bilangan menjadi angka romawi akan lebih singkat.</p>Kode Program<p># Konversi bilangan bulat ke angka romawi</p><p># Batasan: bilangan bulat 1 - 1000</p><p># Tanpa dictionary dalam list/array</p><p></p><p>def angka_romawi(bil):</p><p>    romawi = ""</p><p>    if bil == 0 or bil &gt; 1000:</p><p>        return "UNDEF (bilangan di luar batasan)"</p><p>    if bil == 1000: # batasan</p><p>        return "M"</p><p>    else:</p><p>        while bil &gt; 0:</p><p>            if bil &gt;= 900:</p><p>                romawi += "CM"</p><p>                bil -= 900</p><p>            elif bil &gt;= 500:</p><p>                romawi += "D"</p><p>                bil -= 500</p><p>            elif bil &gt;= 400:</p><p>                romawi += "CD"</p><p>                bil -= 400</p><p>            elif bil &gt;= 100:</p><p>                romawi += "C" * (bil // 100)</p><p>                bil %= 100</p><p>            elif bil &gt;= 90:</p><p>                romawi += "XC"</p><p>                bil -= 90</p><p>            elif bil &gt;= 50:</p><p>                romawi += "L"</p><p>                bil -= 50</p><p>            elif bil &gt;= 40:</p><p>                romawi += "XL"</p><p>                bil -= 40</p><p>            elif bil &gt;= 10:</p><p>                romawi += "X" * (bil // 10)</p><p>                bil %= 10</p><p>            elif bil == 9:</p><p>                romawi += "IX"</p><p>                bil -= 9</p><p>            elif bil &gt;= 5:</p><p>                romawi += "V"</p><p>                bil -= 5</p><p>            elif bil == 4:</p><p>                romawi += "IV"</p><p>                bil -= 4</p><p>            elif bil &gt;= 1:</p><p>                romawi += "I" * (bil // 1)</p><p>                bil = 0</p><p>        return romawi</p><p></p><p>if __name__ == '__main__':</p><p>    bil = int(input("Masukkan bilangan bulat : "))</p><p>    print("Angka romawi dari " + str(bil) + " adalah " + angka_romawi(bil))</p><p></p>Hasil Eksekusi<p>Bisa dilihat pada gambar terlampir.</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="bahasa-pemrograman-yang-bukan-bertujuan-khusus-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-assembly-membuat-aplikasi-pemrograman-mesind-c">
+                            19. Bahasa pemrograman yang bukan bertujuan khusus : *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. Assembly (membuat aplikasi pemrograman mesin)
+D. C. C++, JAVA, C#, PYTHON</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>a. prolog (membuat aplikasi kecerdasan buatan)</p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-kerja-python-%e2%80%8b">
+                            20. bagaimana cara kerja python ?​</h2><br />
+                        <p><strong>Jawaban:</strong></p>1. <p>-Unduhlah python untuk sistem windows</p><p>-pasanglah interpreter python</p><p>-pasanglah editor teks</p><p>-ujilah instalasi</p>2.<p>-pahamilah bahwa python tidak perlu dikompilasi</p><p>-utak atik interpreter</p><p>-pelajari bagaimana python menangani objek dan variabel</p>3.<p>-Jalankan interpreter</p><p>-lakukan arit matika dasar</p><p>-menghitung pangkat</p><p>-membuat dan memanipulasi variabel</p><p>-tutup interpreter</p>4.<p>-buka editor teks</p><p>-buatlah pernyataan print</p><p>-tambahkan pernyataan</p><p>-simpan berkas</p><p>-jalankan program</p><p>-seringlah menguji program</p>5.<p>-lakukan eksperimen dengan pernyataan kontrol aliran dasar</p><p>-membangun fungsi dalam program</p><p>-membangun program kontrol yang lebih rumit</p><p>-pelajari ekspresi kondisional lainnya</p><p>-terus menerus belajar</p><p></p>Tips.↓<p></p>Python merupakan salah satu bahasa komputer sederhana, namun tetap membutuhkan ketekunan untuk mempelajarinya. Memahami aljabar dasar juga akan membantu Anda, karena Python sangat berhubungan dengan matematika.<p></p><p>semoga membantu:)</p><br />
+                                            <h2 class="ez-toc-section" id="tuliskan-cara-menyusun-array-menggunakan-bahasa-python">
+                            21. tuliskan cara menyusun array menggunakan bahasa python</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>gmn maksudnya aku ga ngerti maaf</p><br />
+                                            <h2 class="ez-toc-section" id="apa-perbedaan-python-3-dan-python-2">
+                            22. Apa perbedaan python 3 dan python 2 ??</h2><br />
+                        python 3 dan python 2 memiliki perbedaan pada fungsi print<br /><br />python 2 : print ""<br />python 3 : print ("")<br />
+                                            <h2 class="ez-toc-section" id="cara-parsing-json-di-python">
+                            23. cara parsing json di python ??</h2><br />
+                        import json, truss di load pake module jsonJawaban<br /><br /><br />import json<br />j = json.loads('{"one" : "1", "two" : "2", "three" : "3"}')<br />print j['two']<br />
+                                            <h2 class="ez-toc-section" id="idle-merupakan-program-editor-bawaan-python-idle-bisa-digunakan-dalam-untuk-menjalankan-python-dalam-mode-interaktif-arti-interaktif-di-sini-adalah">
+                            24. IDLE merupakan program editor bawaan Python. IDLE bisa digunakan dalam untuk menjalankan python dalam mode interaktif. Arti interaktif di sini adalah: *</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>IDLE merupakan program editor bawaan Python. IDLE bisa digunakan dalam untuk menjalankan python dalam mode interaktif. Arti interaktif adalah ketika anda mengetikkan perintah, maka hasilnya akan langsung ditampilkan.</p><br />
+                                            <h2 class="ez-toc-section" id="saya-kan-sudah-bisa-oop-pythonapa-yang-harus-dipelajari-setelah-selesai-belajar-oop-python%e2%80%8b">
+                            25. saya kan sudah bisa OOP python,apa yang harus dipelajari setelah selesai belajar OOP python?​</h2><br />
+                        <p>Setelah selesai belajar OOP (Object Oriented Programming) dalam bahasa pemrograman Python, maka ada beberapa hal yang dapat dipelajari selanjutnya, diantaranya:</p><p></p>Memahami dan menguasai konsep-konsep dasar dalam pemrograman, seperti algoritma, struktur data, dan pemecahan masalah.Mengenal dan memahami bahasa pemrograman lainnya, seperti Java, C++, atau C#, serta membandingkan kelebihan dan kekurangan masing-masing bahasa tersebut.Menggunakan Python untuk menyelesaikan masalah-masalah yang lebih kompleks, seperti membuat aplikasi web, game, atau analisis data.Mencari referensi dan sumber belajar yang terus diperbarui, seperti buku, forum, atau komunitas pengembang Python, agar terus meningkatkan kemampuan dalam pemrograman Python.<br />
+                                            <h2 class="ez-toc-section" id="buatlah-program-menggunakan-fungsi-pada-python-dengan-mengaplikasikan-fungsi-matematika-fungsi-nomor-acak-dan-fungsi-trigonometri">
+                            26. Buatlah program menggunakan fungsi pada python dengan mengaplikasikan fungsi matematika, fungsi nomor acak, dan fungsi Trigonometri!.</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Saya bantu buatkan programnya</p><p><strong>Penjelasan:</strong></p><p>import math</p><p>import random</p><p></p><p>print("1. Mencari pythagoras")</p><p>print("2. Angka random")</p><p>print("3. Kalkulator")</p><p></p><p>x = int(input("Pilihan: "))</p><p></p><p>if x == 1 :</p><p>    side_1 = float(input("side = "))</p><p>    side_2 = float(input("side = "))</p><p>    print("Pythagoras = ",(math.sqrt(side_1**2 + side_2**2)))</p><p>    </p><p>elif x == 2:</p><p>    print("Angka = ",(random.randint(10, 100)))</p><p>    </p><p>elif x == 3:</p><p>    num1 = float(input("Masukkan angka 1 = "))</p><p>    num2 = float(input("Masukkan angka 2 = "))</p><p>    print("Hasil pembagian =",(num1 / num2))</p><p>    print("Hasil pengurangan =",(num1 - num2))</p><p>    print("Hasil perkalian =",(num1 * num2))</p><p>    print("Hasil penjumalahan =",(num1 + num2))</p><p>    </p><p>else:</p><p>    print("Salah input !!")</p><p>    </p><br />
+                                            <h2 class="ez-toc-section" id="khusus-yang-tau-coding-1-aplikasi-apa-saja-yang-support-dengan-java2-python-biasa-digunakan-untuk3-html-dan-php-support-dengan%e2%80%8b">
+                            27. Khusus Yang Tau Coding...1.Aplikasi Apa Saja Yang Support Dengan Java?2.Python Biasa Digunakan Untuk?3.Html Dan PHP Support Dengan?​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1. Java normalnya digunakan untuk membuat aplikasi android menggunakan IDE resmi dari google yaitu android studio.</p><p></p><p>2. python memiliki bermacam macam fungsi, seperti untuk mengembangkan desktop app, backend website, artificial inteligence.</p><p></p><p>3. html dan php, keduanya digunakan untuk membuat website. untuk pengembangan frontend website dibutuhkan html, css, dan java script. untuk backend dibutuhkan php.</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-mengatasi-error-waktu-install-python-extension-%e2%80%8b">
+                            28. bagaimana cara mengatasi error waktu install python extension ? ​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Bisa di refres ulang atau matikan laptop terlebih dahulu, sehabis itu coba instal lagi python extension. Maka akan bisa di instal dan tidak error lagi. </p><br />
+                                            <h2 class="ez-toc-section" id="3-bagaimana-cara-mengubah-tipe-data-dari-suatu-variabel-dalam-python-%e2%80%8b">
+                            29. 3. Bagaimana cara mengubah tipe data dari suatu variabel dalam Python? ​</h2><br />
+                        <p>Untuk mengubah tipe data dari suatu variabel dalam Python, gunakan fungsi tipe data yang sesuai, misalnya<strong> int()</strong> untuk mengubah tipe menjadi integer, <strong>float()</strong> untuk mengubah tipe menjadi float, <strong>str()</strong> untuk mengubah tipe menjadi string, dll. Contoh:</p><p>x = "123"</p><p>x = int(x)</p><p>print(x) # 123</p><p></p><p>y = 123</p><p>y = str(y)</p><p>print(y) # "123"</p><br />
+                                            <h2 class="ez-toc-section" id="siapa-pencipta-bahasa-pythonapa-fungsi-bahasa-python-pada-tempat-industri">
+                            30. Siapa pencipta bahasa python?
+apa fungsi bahasa python pada tempat industri?</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1. Guido van Rossum dibuat pada tahun 1991</p><p>2. Contohnya digunakan bahasa yang digunakan untuk merancang artificial intelligence atau bisa sebut AI, Python juga digunakan seorang Data Engineer untuk memantau data tersebut atau bisa diistilahkan dengan monitoring data</p><br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/Qi28uPKaH_A?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>ti</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/hotel-bintang-5-dekat-masjidil-haram.html">Hotel Bintang 5 Dekat Masjidil Haram</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/kombinasi-warna-emas.html">Kombinasi Warna Emas</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/talempong-dari-daerah.html">Talempong Dari Daerah</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/gamis-anak-umur-11-tahun.html">Gamis Anak Umur 11 Tahun</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/apakah-setelah-memakai-sunscreen-boleh-memakai-bedak.html">Apakah Setelah Memakai Sunscreen Boleh Memakai Bedak</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/corsa-ring-14.html">Corsa Ring 14</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/cara-bagi-pulsa-m3-ke-m3.html">Cara Bagi Pulsa M3 Ke M3</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/salak-jumbo.html">Salak Jumbo</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/cara-mengobati-herpes-pada-anak-secara-alami.html">Cara Mengobati Herpes Pada Anak Secara Alami</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/ciri-ciri-rahim-turun-saat-hamil.html">Ciri Ciri Rahim Turun Saat Hamil</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/vitamin-nourish-skin.html">Vitamin Nourish Skin</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/kulit-gatal-bintik-bintik-kecil-berair.html">Kulit Gatal Bintik Bintik Kecil Berair</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/karahayon.html">Karahayon</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/maltodextrin-adalah.html">Maltodextrin Adalah</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/armada-pergi-pagi-pulang-pagi-mp3-download.html">Armada Pergi Pagi Pulang Pagi Mp3 Download</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/apa-penyebab-sakit-pinggang-belakang.html">Apa Penyebab Sakit Pinggang Belakang</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/konversi-usd-ke-idr.html">Konversi Usd Ke Idr</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/ciri-ciri-perilaku-jujur.html">Ciri Ciri Perilaku Jujur</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/cara-puasa-mutih-7-hari.html">Cara Puasa Mutih 7 Hari</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://sangpengajarku.github.io/mazmur-139-13-14.html">Mazmur 139 13 14</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://sangpengajarku.github.io"
+                            itemprop="url">QnA</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://sangpengajarku.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://sangpengajarku.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+    <script type='text/javascript' src='//jd3j7g5z1fqs.com/96/78/7a/96787a1945876b1a9c10f79941441964.js'></script>
+<script type='text/javascript' src='//jd3j7g5z1fqs.com/b4/f1/ef/b4f1ef8dfe59b7fa68754094cf6c8e0e.js'></script>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4739059,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4739059&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>
